@@ -78,8 +78,7 @@ extension CLMainTableViewController {
             data = try Data(contentsOf: urlToFilePath)
         }
         catch {
-            //MARK: ME fatalError(error.localizedDescription)
-            assert(false, error.localizedDescription)
+            fatalError(error.localizedDescription)
         }
         return data
     }
@@ -91,7 +90,7 @@ extension CLMainTableViewController {
             jsonDoc = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
         }
         catch {
-            assert(false, error.localizedDescription)
+            fatalError(error.localizedDescription)
         }
         
         return jsonDoc as! Dictionary<String, Dictionary<String, AnyObject> >
