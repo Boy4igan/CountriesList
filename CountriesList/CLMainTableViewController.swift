@@ -15,7 +15,7 @@ class CLMainTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Table view data source
+    // MARK: - Overriding table view controller
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
@@ -33,20 +33,19 @@ class CLMainTableViewController: UITableViewController {
         return cell!
     }
     
-    //MARK: ME этот метод не относится к Table view data source. Это приватный метод и должен быть определен с себе подобными.
-    func updateCellContent(_ cell: CLCountryTableViewCell, from country: CLCountryModel) {
-        cell.flagImageView.image    = country.flag
-        cell.countryLabel.text      = country.title
-        cell.capitalLabel.text      = country.capital
-    }
-    
-    // MARK: Table view delegate
-    //MARK: ME не вижу смысла разделять Delegate и Data Source
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCountry = self.countries[indexPath.row]
         let nextController  = CLCountryViewController(country: selectedCountry)
         
         navigationController?.pushViewController(nextController, animated: true)
+    }
+    
+    //MARK: Updating cell content
+    
+    func updateCellContent(_ cell: CLCountryTableViewCell, from country: CLCountryModel) {
+        cell.flagImageView.image    = country.flag
+        cell.countryLabel.text      = country.title
+        cell.capitalLabel.text      = country.capital
     }
 }
 
