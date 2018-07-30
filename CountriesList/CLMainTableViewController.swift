@@ -2,8 +2,6 @@ import UIKit
 
 class CLMainTableViewController: UITableViewController {
     var countries = [CLCountryModel]()
-    //MARK: ME эта переменная нужна лишь в 1 методе, имеет смысл перенести ее туда
-    let cellIdentifier = "cell"
     
     // MARK: - Initialization
     
@@ -24,7 +22,8 @@ class CLMainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+        let cellIdentifier  = "cell"
+        var cell            = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         
         if cell == nil {
             cell = CLCountryTableViewCell(reuseIdentifier: cellIdentifier)
