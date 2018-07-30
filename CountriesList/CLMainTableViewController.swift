@@ -28,13 +28,13 @@ class CLMainTableViewController: UITableViewController {
         if cell == nil {
             cell = CLCountryTableViewCell(reuseIdentifier: cellIdentifier)
         }
-        addContent(from: countries[indexPath.row], to: cell as! CLCountryTableViewCell)
+        updateCellContent(cell as! CLCountryTableViewCell, from: countries[indexPath.row])
         
         return cell!
     }
     
     //MARK: ME этот метод не относится к Table view data source. Это приватный метод и должен быть определен с себе подобными.
-    func addContent(from country: CLCountryModel, to cell: CLCountryTableViewCell) {
+    func updateCellContent(_ cell: CLCountryTableViewCell, from country: CLCountryModel) {
         cell.flagImageView.image    = country.flag
         cell.countryLabel.text      = country.title
         cell.capitalLabel.text      = country.capital
