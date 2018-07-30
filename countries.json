@@ -1,0 +1,329 @@
+{
+    "Ukraine" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/ukraine.gif",
+        "Capital"       : "Kiev",
+        "Population"    : 44291413,
+        "Total area"    : 603700,
+        "Description"   : "Ukraine was known as “Kievan Rus” (from which Russia is a derivative) up until the 16th century. In the 9th century, Kiev was the major political and cultural center in eastern Europe. Kievan Rus reached the height of its power in the 10th century and adopted Byzantine Christianity. The Mongol conquest in 1240 ended Kievan power. From the 13th to the 16th century, Kiev was under the influence of Poland and western Europe. The negotiation of the Union of Brest-Litovsk in 1596 divided the Ukrainians into Orthodox and Ukrainian Catholic faithful. In 1654, Ukraine asked the czar of Moscovy for protection against Poland, and the Treaty of Pereyasav signed that year recognized the suzerainty of Moscow. The agreement was interpreted by Moscow as an invitation to take over Kiev, and the Ukrainian state was eventually absorbed into the Russian Empire."
+    },
+    
+    "Brazil" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/brazil.gif",
+        "Capital"       : "Brasilia",
+        "Population"    : 205716890,
+        "Total area"    : 8511965,
+        "Description"   : "Brazil covers nearly half of South America and is the continent's largest nation. It extends 2,965 mi (4,772 km) north-south, 2,691 mi (4,331 km) east-west, and borders every nation on the continent except Chile and Ecuador. Brazil may be divided into the Brazilian Highlands, or plateau, in the south and the Amazon River Basin in the north. Over a third of Brazil is drained by the Amazon and its more than 200 tributaries. The Amazon is navigable for ocean steamers to Iquitos, Peru, 2,300 mi (3,700 km) upstream. Southern Brazil is drained by the Plata system—the Paraguay, Uruguay, and Paraná rivers"
+    },
+    
+    "China" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/china.gif",
+        "Capital"       : "Peking",
+        "Population"    : 1355692576,
+        "Total area"    : 9326411,
+        "Description"   : "The greater part of the country is mountainous. Its principal ranges are the Tien Shan, the Kunlun chain, and the Trans-Himalaya. In the southwest is Tibet, which China annexed in 1950. The Gobi Desert lies to the north. China proper consists of three great river systems: the Yellow River (Huang He), 2,109 mi (5,464 km) long; the Yangtze River (Chang Jiang), the third-longest river in the world at 2,432 mi (6,300 km); and the Pearl River (Zhu Jiang), 848 mi (2,197 km) long."
+    },
+    
+    "Canada" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/canada.gif",
+        "Capital"       : "Ottawa",
+        "Population"    : 36290000,
+        "Total area"    : 9984670,
+        "Description"   : "The first inhabitants of Canada were native Indian peoples, primarily the Inuit (Eskimo). The Norse explorer Leif Eriksson probably reached the shores of Canada (Labrador or Nova Scotia) in 1000, but serious colonization efforts began in 1497, when John Cabot, an Italian in the service of Henry VII of England, reached Newfoundland or Nova Scotia. Canada was taken for France in 1534 by Jacques Cartier. The actual settlement of New France, as it was then called, began in 1604 at Port Royal in what is now Nova Scotia; in 1608, Quebec was founded. France's colonization efforts were not very successful, but French explorers by the end of the 17th century had penetrated beyond the Great Lakes to the western prairies and south along the Mississippi to the Gulf of Mexico. Meanwhile, the English Hudson's Bay Company had been established in 1670. Because of the valuable fisheries and fur trade, a conflict developed between the French and English; in 1713, Newfoundland, Hudson Bay, and Nova Scotia (Acadia) were lost to England. During the Seven Years' War (1756–1763), England extended its conquest, and the British general James Wolfe won his famous victory over Gen. Louis Montcalm outside Quebec on Sept. 13, 1759. The Treaty of Paris in 1763 gave England control over the French territory."
+    },
+    
+    "Cuba" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/cuba.gif",
+        "Capital"       : "Havana",
+        "Population"    : 11047251,
+        "Total area"    : 110860,
+        "Description"   : "Arawak (or Taino) Indians inhabiting Cuba when Columbus landed on the island in 1492 died from diseases brought by sailors and settlers. By 1511, Spaniards under Diego Velásquez had established settlements. Havana's superb harbor made it a common transit point to and from Spain.In the early 1800s, Cuba's sugarcane industry boomed, requiring massive numbers of black slaves. A simmering independence movement turned into open warfare from 1867 to 1878. Slavery was abolished in 1886. In 1895, the poet José Marti led the struggle that finally ended Spanish rule, thanks largely to U.S. intervention in 1898 after the sinking of the battleship Maine in Havana harbor.An 1899 treaty made Cuba an independent republic under U.S. protection. The U.S. occupation, which ended in 1902, suppressed yellow fever and brought large American investments. The 1901 Platt Amendment allowed the U.S. to intervene in Cuba's affairs, which it did four times from 1906 to 1920. Cuba terminated the amendment in 1934.In 1933, a group of army officers, including army sergeant Fulgencio Batista, overthrew President Gerardo Machado. Batista became president in 1940, running a corrupt police state. In 1956, Fidel Castro Ruz launched a revolution from his camp in the Sierra Maestra mountains. Castro's brother Raul and Ernesto (Ché) Guevara, an Argentine physician, were his top lieutenants. Many anti-Batista landowners supported the rebels. The U.S. ended military aid to Cuba in 1958, and on New Year's Day 1959, Batista fled into exile and Castro took over the government."
+    },
+    
+    "Germany" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/germany.gif",
+        "Capital"       : "Berlin ",
+        "Population"    : 80996685,
+        "Total area"    : 357021,
+        "Description"   : "The Celts are believed to have been the first inhabitants of Germany. They were followed by German tribes at the end of the 2nd century B.C. German invasions destroyed the declining Roman Empire in the 4th and 5th centuries A.D. One of the tribes, the Franks, attained supremacy in western Europe under Charlemagne, who was crowned Holy Roman Emperor in 800. By the Treaty of Verdun (843), Charlemagne's lands east of the Rhine were ceded to the German Prince Louis. Additional territory acquired by the Treaty of Mersen (870) gave Germany approximately the area it maintained throughout the Middle Ages. For several centuries after Otto the Great was crowned king in 936, German rulers were also usually heads of the Holy Roman Empire. By the 14th century, the Holy Roman Empire was little more than a loose federation of the German princes who elected the Holy Roman Emperor. In 1438, Albert of Hapsburg became emperor, and for the next several centuries the Hapsburg line ruled the Holy Roman Empire until its decline in 1806. Relations between state and church were changed by the Reformation, which began with Martin Luther's 95 theses, and came to a head in 1547, when Charles V scattered the forces of the Protestant League at Mühlberg. The Counter-Reformation followed. A dispute over the succession to the Bohemian throne brought on the Thirty Years' War (1618–1648), which devastated Germany and left the empire divided into hundreds of small principalities virtually independent of the emperor."
+    },
+    
+    "Italy" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/italy.gif",
+        "Capital"       : "Rome",
+        "Population"    : 61680122,
+        "Total area"    : 301230,
+        "Description"   : "Italy, slightly larger than Arizona, is a long peninsula shaped like a boot, surrounded on the west by the Tyrrhenian Sea and on the east by the Adriatic. It is bounded by France, Switzerland, Austria, and Slovenia to the north. The Apennine Mountains form the peninsula's backbone; the Alps form its northern boundary. The largest of its many northern lakes is Garda (143 sq mi; 370 sq km); the Po, its principal river, flows from the Alps on Italy's western border and crosses the Lombard plain to the Adriatic Sea. Several islands form part of Italy; the largest are Sicily (9,926 sq mi; 25,708 sq km) and Sardinia (9,301 sq mi; 24,090 sq km)."
+    },
+    
+    "India" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/india.gif",
+        "Capital"       : "New Delhi",
+        "Population"    : 1236344631,
+        "Total area"    : 3287590,
+        "Description"   : "One-third the area of the United States, the Republic of India occupies most of the subcontinent of India in southern Asia. It borders on China in the northeast. Other neighbors are Pakistan on the west, Nepal and Bhutan on the north, and Burma and Bangladesh on the east. The country can be divided into three distinct geographic regions: the Himalayan region in the north, which contains some of the highest mountains in the world, the Gangetic Plain, and the plateau region in the south and central part. Its three great river systems—the Ganges, the Indus, and the Brahmaputra—have extensive deltas and all rise in the Himalayas."
+    },
+    
+    "Indonesia" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/indones.gif",
+        "Capital"       : "Jakarta",
+        "Population"    : 253609643,
+        "Total area"    : 1919440,
+        "Description"   : "Indonesia is an archipelago in Southeast Asia consisting of 17,000 islands (6,000 inhabited) and straddling the equator. The largest islands are Sumatra, Java (the most populous), Bali, Kalimantan (Indonesia's part of Borneo), Sulawesi (Celebes), the Nusa Tenggara islands, the Moluccas Islands, and Irian Jaya (also called West Papua), the western part of New Guinea. Its neighbor to the north is Malaysia and to the east is Papua New Guinea. Indonesia, part of the “ring of fire,” has the largest number of active volcanoes in the world. Earthquakes are frequent. Wallace's line, a zoological demarcation between Asian and Australian flora and fauna, divides Indonesia."
+    },
+    
+    "Ireland" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/ireland.gif",
+        "Capital"       : "Dublin",
+        "Population"    : 4832765,
+        "Total area"    : 70280,
+        "Description"   : "Ireland is situated in the Atlantic Ocean and separated from Great Britain by the Irish Sea. Half the size of Arkansas, it occupies the entire island except for the six counties that make up Northern Ireland. Ireland resembles a basin—a central plain rimmed with mountains, except in the Dublin region. The mountains are low, with the highest peak, Carrantuohill in County Kerry, rising to 3,415 ft (1,041 m). The principal river is the Shannon, which begins in the north-central area, flows south and southwest for about 240 mi (386 km), and empties into the Atlantic."
+    },
+    
+    "Korea North" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/nkorea.gif",
+        "Capital"       : "Pyongyang",
+        "Population"    : 24589122,
+        "Total area"    : 120540,
+        "Description"   : "Korea is a 600-mile (966km) peninsula jutting out from Manchuria and China (and a small portion of the USSR). North Korea occupies an area—slightly smaller than Pennsylvania—north of the 38th parallel. The country is almost completely covered by a series of north-south mountain ranges separated by narrow valleys. The Yalu River forms part of the northern border with Manchuria. The ancient history of the Korean peninsula can be traced to the Neolithic Age, when Turkic-Manchurian-Mongol peoples migrated into the region from China. The first agriculturally based settlements appeared around 6000 B.C. Some of the larger communities of this era were established along the Han-gang River near modern-day Seoul, others near Pyongyang and Pusan. According to ancient lore, Korea's earliest civilization, known as Choson, was founded in 2333 B.C. by Tan-gun. In the 17th century, Korea became a vassal state of China and was cut off from outside contact until the Sino-Japanese War of 1894–1895. Following Japan's victory, Korea was granted independence. By 1910, Korea had been annexed by Japan, which developed the country but never won over the Korean nationalists, who continued to agitate for independence."
+    },
+    
+    "Korea South" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/skorea.gif",
+        "Capital"       : "Seoul",
+        "Population"    : 49039986,
+        "Total area"    : 96920,
+        "Description"   : "South Korea came into being after World War II, the result of a 1945 agreement reached by the Allies at the Potsdam Conference, making the 38th parallel the boundary between a northern zone of the Korean peninsula to be occupied by the USSR and southern zone to be controlled by U.S. forces. (For details, see Korea, North. ) Elections were held in the U.S. zone in 1948 for a national assembly, which adopted a republican constitution and elected Syngman Rhee as the nation's president. The new republic was proclaimed on Aug. 15 and was recognized as the legal government of Korea by the UN on Dec. 12, 1948."
+    },
+    
+    "Moldova" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/moldova.gif",
+        "Capital"       : "Chisinau",
+        "Population"    : 3538288,
+        "Total area"    : 33843,
+        "Description"   : "Most of what is now Moldova was the independent principality of Moldavia in the 14th century. In the 16th century, it came under Ottoman Turkish rule. Russia acquired Moldavian territory in 1791, and more in 1812 when Turkey gave up the province of Bessarabia—the area between the Prut and Dniester rivers—to Russia in the Treaty of Bucharest. Turkey held the rest of Moldavia but it was passed to Romania in 1918. Russia did not recognize the cession of this territory. In 1924, the USSR established Moldavia as an Autonomous Soviet Socialist Republic. As a result of the Nazi-Soviet Nonaggression Pact of 1939, Romania was forced to cede all of Bessarabia to the Soviet Union in 1940. The Soviets merged the Moldavia ASSR with the Romanian-speaking districts of Bessarabia to form the Moldavian Soviet Socialist Republic. During World War II, Romania joined Germany in the attack on the Soviet Union and reconquered Bessarabia. But Soviet troops retook the territory in 1944 and reestablished the Moldavian SSR. For many years, Romania and the USSR disputed each other's territorial claims over Bessarabia. Following the aborted coup against Soviet president Mikhail Gorbachev, Moldavia proclaimed its independence in Sept. 1991 and changed its name to the Romanian spelling, Moldova."
+    },
+    
+    "Mexico" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/mexico.gif",
+        "Capital"       : "Mexico",
+        "Population"    : 20286655,
+        "Total area"    : 1972550,
+        "Description"   : "At least three great civilizations—the Mayas, the Olmecs, and the Toltecs—preceded the wealthy Aztec empire, conquered in 1519–1521 by the Spanish under Hernando Cortés. Spain ruled Mexico as part of the viceroyalty of New Spain for the next 300 years until Sept. 16, 1810, when the Mexicans first revolted. They won independence in 1821. From 1821 to 1877, there were two emperors, several dictators, and enough presidents and provisional executives to make a new government on the average of every nine months. Mexico lost Texas (1836), and after defeat in the war with the U.S. (1846–1848), it lost the area that is now California, Nevada, and Utah, most of Arizona and New Mexico, and parts of Wyoming and Colorado under the Treaty of Guadalupe Hidalgo. In 1855, the Indian patriot Benito Juárez began a series of reforms, including the disestablishment of the Catholic Church, which owned vast property. The subsequent civil war was interrupted by the French invasion of Mexico (1861) and the crowning of Maximilian of Austria as emperor (1864). He was overthrown and executed by forces under Juárez, who again became president in 1867."
+    },
+    
+    "Nigeria" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/nigeria.gif",
+        "Capital"       : "Abuja",
+        "Population"    : 177155754,
+        "Total area"    : 923768,
+        "Description"   : "The first inhabitants of what is now Nigeria were thought to have been the Nok people (500 BC–c. AD 200). The Kanuri, Hausa, and Fulani peoples subsequently migrated there. Islam was introduced in the 13th century, and the empire of Kanem controlled the area from the end of the 11th century to the 14th. The Fulani empire ruled the region from the beginning of the 19th century until the British annexed Lagos in 1851 and seized control of the rest of the region by 1886. It formally became the Colony and Protectorate of Nigeria in 1914. During World War I, native troops of the West African frontier force joined with French forces to defeat the German garrison in Cameroon."
+    },
+    
+    "Netherlands" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/netherla.gif",
+        "Capital"       : "Amsterdam",
+        "Population"    : 16877351,
+        "Total area"    : 41526,
+        "Description"   : "Julius Caesar found the low-lying Netherlands inhabited by Germanic tribes—the Nervii, Frisii, and Batavi. The Batavi on the Roman frontier did not submit to Rome's rule until 13 B.C., and then only as allies. The Franks controlled the region from the 4th to the 8th century, and it became part of Charlemagne's empire in the 8th and 9th centuries. The area later passed into the hands of Burgundy and the Austrian Hapsburgs and finally, in the 16th century, came under Spanish rule. When Philip II of Spain suppressed political liberties and the growing Protestant movement in the Netherlands, a revolt led by William of Orange broke out in 1568. Under the Union of Utrecht (1579), the seven northern provinces became the United Provinces of the Netherlands. War between the United Provinces and Spain continued into the 17th century but in 1648 Spain finally recognized Dutch independence. The Dutch East India Company was established in 1602, and by the end of the 17th century, Holland was one of the great sea and colonial powers of Europe. The nation's independence was not completely established until after the Thirty Years' War (1618–1648), when the country's rise as a commercial and maritime power began. In 1688, the English Parliament invited William of Orange, stadtholder, and his wife, Mary Stuart, to rule England as William III and Mary II. William then used the combined resources of England and the Netherlands to wage war on Louis XIV's France. In 1814, all the provinces of Holland and Belgium were merged into one kingdom, but in 1830 the southern provinces broke away to form the kingdom of Belgium. A liberal constitution was adopted by the Netherlands in 1848. The country remained neutral during World War I."
+    },
+    
+    "New Zealand" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/newzeala.gif",
+        "Capital"       : "Wellington",
+        "Population"    : 4401916,
+        "Total area"    : 268671,
+        "Description"   : "Maoris were the first inhabitants of New Zealand, arriving on the islands in about 1000. Maori oral history maintains that the Maoris came to the island in seven canoes from other parts of Polynesia. In 1642, New Zealand was explored by Abel Tasman, a Dutch navigator. British captain James Cook made three voyages to the islands, beginning in 1769. Britain formally annexed the islands in 1840. The Treaty of Waitangi (Feb. 6, 1840) between the British and several Maori tribes promised to protect Maori land if the Maoris recognized British rule. Encroachment by British settlers was relentless, however, and skirmishes between the two groups intensified."
+    },
+    
+    "Panama" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/panama.gif",
+        "Capital"       : "Panama",
+        "Population"    : 3608431,
+        "Total area"    : 78200,
+        "Description"   : "Explored by Columbus in 1502 and by Balboa in 1513, Panama was the principal shipping point to and from South and Central America in colonial days. In 1821, when Central America revolted against Spain, Panama joined Colombia, which had already declared its independence. For the next 82 years, Panama attempted unsuccessfully to break away from Colombia. Between 1850 and 1900 Panama had 40 administrations, 50 riots, 5 attempted secessions, and 13 U.S. interventions. After a U.S. proposal for canal rights over the narrow isthmus was rejected by Colombia, Panama proclaimed its independence with U.S. backing in 1903. For canal rights in perpetuity, the U.S. paid Panama $10 million and agreed to pay $250,000 each year, which was increased to $430,000 in 1933 and to $1,930,000 in 1955. In exchange, the U.S. got the Canal Zone—a 10-mile-wide strip across the isthmus—and considerable influence in Panama's affairs. On Sept. 7, 1977, Gen. Omar Torrijos Herrera and President Jimmy Carter signed treaties giving Panama gradual control of the canal, phasing out U.S. military bases, and guaranteeing the canal's neutrality."
+    },
+    
+    "Peru" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/peru.gif",
+        "Capital"       : "Lima",
+        "Population"    : 31036656,
+        "Total area"    : 1285220,
+        "Description"   : "Peru, in western South America, extends for nearly 1,500 mi (2,414 km) along the Pacific Ocean. Colombia and Ecuador are to the north, Brazil and Bolivia to the east, and Chile to the south. Five-sixths the size of Alaska, Peru is divided by the Andes Mountains into three sharply differentiated zones. To the west is the coastline, much of it arid, extending 50 to 100 mi (80 to 160 km) inland. The mountain area, with peaks over 20,000 ft (6,096 m), lofty plateaus, and deep valleys, lies centrally. Beyond the mountains to the east is the heavily forested slope leading to the Amazonian plains. Peru shares borders with five neighboring countries. In order of shared border length, these are: Bolivia (900 km), Brazil (1,560 km), Chile (160 km), Colombia (1,496 km), and Ecuador (1,420 km)."
+    },
+    
+    "Portugal" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/portugal.gif",
+        "Capital"       : "Lisbon",
+        "Population"    : 10813834,
+        "Total area"    : 92391,
+        "Description"   : "Portugal occupies the western part of the Iberian Peninsula and is slightly smaller than Indiana. The country is crossed by three large rivers that rise in Spain, flow into the Atlantic, and divide the country into three geographic areas. The Minho River, part of the northern boundary, cuts through a mountainous area that extends south to the vicinity of the Douro River. South of the Douro, the mountains slope to the plains around the Tejo River. The remaining division is the southern one of Alentejo. The Azores stretch over 340 mi (547 km) in the Atlantic and consist of nine islands with a total area of 902 sq mi (2,335 sq km). Madeira, consisting of two inhabited islands, Madeira and Porto Santo, and two groups of uninhabited islands, lie in the Atlantic about 535 mi (861 km) southwest of Lisbon."
+    },
+    
+    "Poland" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/poland.gif",
+        "Capital"       : "Warsaw",
+        "Population"    : 38346279,
+        "Total area"    : 312685,
+        "Description"   : "Poland, a country the size of New Mexico, is in north-central Europe. Most of the country is a plain with no natural boundaries except the Carpathian Mountains in the south and the Oder and Neisse rivers in the west. Other major rivers, which are important to commerce, are the Vistula, Warta, and Bug."
+    },
+    
+    "Romania" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/romania.gif",
+        "Capital"       : "Bucharest",
+        "Population"    : 21729871,
+        "Total area"    : 237500,
+        "Description"   : "Romania is in southeast Europe and is slightly smaller than Oregon. The Carpathian Mountains divide Romania's upper half from north to south and connect near the center of the country with the Transylvanian Alps, running east and west. North and west of these ranges lies the Transylvanian plateau, and to the south and east are the plains of Moldavia and Walachia. In its last 190 mi (306 km), the Danube River flows through Romania only. It enters the Black Sea in northern Dobruja, just south of the border with Ukraine."
+    },
+    
+    "Russia" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/russia.gif",
+        "Capital"       : "Moscow",
+        "Population"    : 142257519,
+        "Total area"    : 17098242,
+        "Description"   : "The Russian Federation is the largest of the 21 republics that make up the Commonwealth of Independent States. It occupies most of eastern Europe and north Asia, stretching from the Baltic Sea in the west to the Pacific Ocean in the east, and from the Arctic Ocean in the north to the Black Sea and the Caucasus in the south. Russia is the largest country in the world in terms of area, but it's unfavorably located in relation to major sea lanes of the world. Much of the country lacks proper soils and climates (either too cold or too dry) for agriculture. Russia contains Mount El'brus, Europe's tallest peak, and Lake Baikal, the deepest lake in the world. Lake Baikal is estimated to hold one fifth of the world's fresh water. Russia shares borders with fourteen neighboring countries. In order of shared border length, these are: Kazakhstan (7,644 km), China (Southeast - 4,133 km) and (South - 46 km), Mongolia (3,452 km), Ukraine (1,944 km), Belarus (1,312 km), Finland (1,309 km), Georgia (894 km), Azerbaijan (338 km), Latvia (332 km), Estonia (324 km), Lithuania (Kaliningrad Oblast - 261 km), Poland (Kaliningrad Oblast - 210 km), Norway (191 km), and North Korea (18 km)."
+    },
+    
+    "Saudi Arabia" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/saudiara.gif",
+        "Capital"       : "Riyadh",
+        "Population"    : 27345986,
+        "Total area"    : 2149690,
+        "Description"   : "Saudi Arabia occupies most of the Arabian Peninsula, with the Red Sea and the Gulf of Aqaba to the west and the Persian Gulf to the east. Neighboring countries are Jordan, Iraq, Kuwait, Qatar, the United Arab Emirates, the Sultanate of Oman, Yemen, and Bahrain, connected to the Saudi mainland by a causeway. Saudi Arabia contains the world's largest continuous sand desert, the Rub Al-Khali, or Empty Quarter. Its oil region lies primarily in the eastern province along the Persian Gulf."
+    },
+    
+    "Serbia" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/serbia.gif",
+        "Capital"       : "Belgrade",
+        "Population"    : 7209764,
+        "Total area"    : 77474,
+        "Description"   : "Serbia is largely mountainous. Its northeast section is part of the rich, fertile Danubian Plain drained by the Danube, Tisa, Sava, and Morava river systems. It borders Croatia on the northwest, Hungary on the north, Romania on the northeast, Bulgaria on the east, Macedonia on the south, and Albania, Montenegro, and Bosnia and Herzegovina on the west."
+    },
+    
+    "Spain" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/spain.gif",
+        "Capital"       : "Madrid",
+        "Population"    : 47737941,
+        "Total area"    : 504782,
+        "Description"   : "Spain occupies 85% of the Iberian Peninsula, which it shares with Portugal, in southwest Europe. Africa is less than 10 mi (16 km) south at the Strait of Gibraltar. A broad central plateau slopes to the south and east, crossed by a series of mountain ranges and river valleys. Principal rivers are the Ebro in the northeast, the Tajo in the central region, and the Guadalquivir in the south. Off Spain's east coast in the Mediterranean are the Balearic Islands (1,936 sq mi; 5,014 sq km), the largest of which is Majorca. Sixty mi (97 km) west of Africa are the Canary Islands (2,808 sq mi; 7,273 sq km)."
+    },
+    
+    "Taiwan" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/taiwan.gif",
+        "Capital"       : "Taipei",
+        "Population"    : 23359928,
+        "Total area"    : 35980,
+        "Description"   : "The Republic of China today consists of the island of Taiwan, an island 100 mi (161 km) off the Asian mainland in the Pacific; two off-shore islands, Kinmen (Quemoy) and Matsu; and the nearby islets of the Pescadores chain. It is slightly larger than the combined areas of Massachusetts and Connecticut."
+    },
+    
+    "Turkey" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/turkey.gif",
+        "Capital"       : "Ankara",
+        "Population"    : 81619392,
+        "Total area"    : 780580,
+        "Description"   : "Turkey is at the northeast end of the Mediterranean Sea in southeast Europe and southwest Asia. To the north is the Black Sea and to the west is the Aegean Sea. Its neighbors are Greece and Bulgaria to the west, Russia, Ukraine, and Romania to the north and northwest (through the Black Sea), Georgia, Armenia, Azerbaijan, and Iran to the east, and Syria and Iraq to the south. The Dardanelles, the Sea of Marmara, and the Bosporus divide the country. Turkey in Europe comprises an area about equal to the state of Massachusetts. Turkey in Asia is about the size of Texas. Its center is a treeless plateau rimmed by mountains."
+    },
+    
+    "Tajikistan" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/tajikis.gif",
+        "Capital"       : "Dushanbe",
+        "Population"    : 8051512,
+        "Total area"    : 143100,
+        "Description"   : "Ninety-three percent of Tajikistan's territory is mountainous, and the mountain glaciers are the source of its rivers. Tajikistan is an earthquake-prone area. The republic is bounded by China in the east, Afghanistan to the south, and Uzbekistan and Kyrgyzstan to the west and north. The central Asian republic also includes the Gorno-Badakh Shan Autonomous region. Tajikistan is slightly larger than the state of Illinois."
+    },
+    
+    "Uganda" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/uganda.gif",
+        "Capital"       : "Kampala",
+        "Population"    : 35918915,
+        "Total area"    : 236040,
+        "Description"   : "Uganda, twice the size of Pennsylvania, is in East Africa. It is bordered on the west by Congo, on the north by the Sudan, on the east by Kenya, and on the south by Tanzania and Rwanda. The country, which lies across the equator, is divided into three main areas—swampy lowlands, a fertile plateau with wooded hills, and a desert region. Lake Victoria forms part of the southern border."
+    },
+    
+    "United States" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/usa.gif",
+        "Capital"       : "Washington",
+        "Population"    : 318892103,
+        "Total area"    : 9631420 ,
+        "Description"   : "The United States shares land borders with Canada (to the north) and Mexico (to the south), and a territorial water border with Russia in the northwest, and two territorial water borders in the southeast between Florida and Cuba, and Florida and the Bahamas. The contiguous forty-eight states are otherwise bounded by the Pacific Ocean on the west, the Atlantic Ocean on the east, and the Gulf of Mexico to the southeast. Alaska borders the Pacific Ocean to the south and southwest, the Bering Strait to the west, and the Arctic Ocean to the north, while Hawaii lies far to the southwest of the mainland in the Pacific Ocean. Forty-eight of the states are in the single region between Canada and Mexico; this group is referred to, with varying precision and formality, as the continental or contiguous United States, and as the Lower 48. Alaska, which is not included in the term contiguous United States, is at the northwestern end of North America, separated from the Lower 48 by Canada.The capital city, Washington, District of Columbia, is a federal district located on land donated by the state of Maryland. (Virginia had also donated land, but it was returned in 1849.) The United States also has overseas territories with varying levels of independence and organization: in the Caribbean the territories of Puerto Rico and the U.S. Virgin Islands, and in the Pacific the inhabited territories of Guam, American Samoa, and the Northern Mariana Islands, along with a number of uninhabited island territories."
+    },
+    
+    "Uruguay" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/urugay.gif",
+        "Capital"       : "Montevideo",
+        "Population"    : 3332972,
+        "Total area"    : 176220,
+        "Description"   : "Uruguay, on the east coast of South America south of Brazil and east of Argentina, is comparable in size to Oklahoma. The country consists of a low, rolling plain in the south and a low plateau in the north. It has a 120-mile (193 km) Atlantic shoreline, a 235-mile (378 km) frontage on the Rio de la Plata, and 270 mi (435 km) on the Uruguay River, its western boundary."
+    },
+    
+    "Zimbabwe" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/zimbabwe.gif",
+        "Capital"       : "Harare",
+        "Population"    : 13771721,
+        "Total area"    : 390580,
+        "Description"   : "Zimbabwe, a landlocked country in south-central Africa, is slightly smaller than California. It is bordered by Botswana on the west, Zambia on the north, Mozambique on the east, and South Africa on the south."
+    },
+    
+    "Venezuela" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/venezuel.gif",
+        "Capital"       : "Caracas",
+        "Population"    : 28868486,
+        "Total area"    : 912050,
+        "Description"   : "Venezuela, a third larger than Texas, occupies most of the northern coast of South America on the Caribbean Sea. It is bordered by Colombia to the west, Guyana to the east, and Brazil to the south. Mountain systems break Venezuela into four distinct areas: (1) the Maracaibo lowlands; (2) the mountainous region in the north and northwest; (3) the Orinoco basin, with the llanos (vast grass-covered plains) on its northern border and great forest areas in the south and southeast; and (4) the Guiana Highlands, south of the Orinoco, accounting for nearly half the national territory."
+    },
+    
+    "Egypt" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/egypt.gif",
+        "Capital"       : "Cairo",
+        "Population"    : 86895099,
+        "Total area"    : 1001450,
+        "Description"   : "Egypt, at the northeast corner of Africa on the Mediterranean Sea, is bordered on the west by Libya, on the south by the Sudan, and on the east by the Red Sea and Israel. It is nearly one and one-half times the size of Texas. Egypt is divided into two unequal, extremely arid regions by the landscape's dominant feature, the northward-flowing Nile River. The Nile starts 100 mi (161 km) south of the Mediterranean and fans out to a sea front of 155 mi between the cities of Alexandria and Port Said."
+    },
+    
+    "Malawi" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/malawi.gif",
+        "Capital"       : "Lilongwe",
+        "Population"    : 6777547,
+        "Total area"    : 118480,
+        "Description"   : "Early human inhabitants of what is now Malawi date to 8000–2000 B.C. Bantu-speaking peoples migrated there between the 1st and 4th centuries A.D. A large slave trade took place in the 18th and 19th centuries and brought Islam to the region. At the same time, missionaries introduced Christianity. Several major kingdoms were established in the precolonial period: the Maravi in 1480, the Ngonde in 1600, and the Chikulamayembe in the 18th century."
+    },
+    
+    "Morocco" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/morocco.gif",
+        "Capital"       : "Rabat",
+        "Population"    : 33986655,
+        "Total area"    : 446550,
+        "Description"   : "Morocco, about one-tenth larger than California, lies across the Strait of Gibraltar on the Mediterranean and looks out on the Atlantic from the northwest shoulder of Africa. Algeria is to the east and Mauritania to the south. On the Atlantic coast there is a fertile plain. The Mediterranean coast is mountainous. The Atlas Mountains, running northeastward from the south to the Algerian frontier, average 11,000 ft (3,353 m) in elevation."
+    },
+    
+    "Monaco" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/monaco.gif",
+        "Capital"       : "Monaco",
+        "Population"    : 30508,
+        "Total area"    : 20,
+        "Description"   : "The Phoenicians, and after them the Greeks, had a temple on the Monacan headland honoring Hercules. The principality took its name from Monoikos, the Greek surname for this mythological hero. After being independent for 800 years, Monaco was annexed to France in 1793 and placed under Sardinia's protection in 1815. By the Franco-Monegasque treaty of 1861, Monaco went under French guardianship but continued to be independent. A treaty made with France in 1918 contained a clause providing that, in the event that the male Grimaldi dynasty should die out, Monaco would become an autonomous state under French protection. Monaco has a tourist business that attracts as many as 1.5 million visitors a year and is famous for its beaches and casinos, especially world-famous Monte Carlo. It had gaming tables as early as 1856."
+    },
+    
+    "France" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/france.gif",
+        "Capital"       : "Paris",
+        "Population"    : 66259012,
+        "Total area"    : 547030,
+        "Description"   : "France is about 80% the size of Texas. In the Alps near the Italian and Swiss borders is western Europe's highest point—Mont Blanc (15,781 ft; 4,810 m). The forest-covered Vosges Mountains are in the northeast, and the Pyrénées are along the Spanish border. Except for extreme northern France, the country may be described as four river basins and a plateau. Three of the streams flow west—the Seine into the English Channel, the Loire into the Atlantic, and the Garonne into the Bay of Biscay. The Rhône flows south into the Mediterranean. For about 100 mi (161 km), the Rhine is France's eastern border. In the Mediterranean, about 115 mi (185 km) east-southeast of Nice, is the island of Corsica (3,367 sq mi; 8,721 sq km)."
+    },
+    
+    "Finland" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/finland.gif",
+        "Capital"       : "Helsinki",
+        "Population"    : 5268799,
+        "Total area"    : 338145,
+        "Description"   : "Finland is three times the size of Ohio. It is heavily forested and contains thousands of lakes, numerous rivers, and extensive areas of marshland. Except for a small highland region in the extreme northwest, the country is a lowland less than 600 ft (180 m) above sea level. Off the southwest coast are the Swedish-populated Åland Islands (581 sq mi; 1,505 sq km), which have had an autonomous status since 1921."
+    },
+    
+    "Estonia" : {
+        "Flag"          : "https://www.infoplease.com/sites/infoplease.com/files/public%3A/estonia.gif",
+        "Capital"       : "Tallinn",
+        "Population"    : 1257921,
+        "Total area"    : 43211,
+        "Description"   : "Estonians resisted the assaults of Vikings, Danes, Swedes, and Russians before the 13th century. In 1346, the Danes, who possessed northern Estonia, sold the land to the Teutonic Knights of Germany, who already possessed Livonia (southern Estonia and Latvia). The Teutonic Knights reduced the Estonians to serfdom. In 1526, the Swedes took over, and the power of the German (Balt) landowning class was reduced. But after 1721, when Russia succeeded Sweden as the ruling power under the Peace of Nystad, the Estonians were subject to a double bondage—the Balts and the czarist officials. The oppression lasted until the closing months of World War I, when Estonia finally achieved independence after a victorious war (1918–1920). But shortly after the start of World War II, the nation was occupied by Russian troops and incorporated as the 16th republic of the USSR in 1940. Germany occupied the nation from 1941 to 1944, when it was retaken by the Soviets."
+    }
+}
