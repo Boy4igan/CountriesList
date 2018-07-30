@@ -2,6 +2,7 @@ import UIKit
 
 class CLMainTableViewController: UITableViewController {
     var countries = [CLCountryModel]()
+    //MARK: ME эта переменная нужна лишь в 1 методе, имеет смысл перенести ее туда
     let cellIdentifier = "cell"
     
     // MARK: - Initialization
@@ -33,6 +34,7 @@ class CLMainTableViewController: UITableViewController {
         return cell!
     }
     
+    //MARK: ME этот метод не относится к Table view data source. Это приватный метод и должен быть определен с себе подобными.
     func addContent(from country: CLCountryModel, to cell: CLCountryTableViewCell) {
         cell.flagImageView.image    = country.flag
         cell.countryLabel.text      = country.title
@@ -40,7 +42,7 @@ class CLMainTableViewController: UITableViewController {
     }
     
     // MARK: Table view delegate
-    
+    //MARK: ME не вижу смысла разделять Delegate и Data Source
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCountry = self.countries[indexPath.row]
         let nextController  = CLCountryViewController(country: selectedCountry)
@@ -50,7 +52,7 @@ class CLMainTableViewController: UITableViewController {
 }
 
 //MARK: Model builder
-
+//MARK: ME Заяем Extension?
 extension CLMainTableViewController {
     
     var urlToFilePath: URL {
@@ -78,6 +80,7 @@ extension CLMainTableViewController {
             data = try Data(contentsOf: urlToFilePath)
         }
         catch {
+            //MARK: ME fatalError(error.localizedDescription)
             assert(false, error.localizedDescription)
         }
         return data
@@ -107,12 +110,13 @@ extension CLMainTableViewController {
     func didObtainCountry(_ country: CLCountryModel) {
         DispatchQueue.main.async {
             [unowned self] in
-
+//MARK: ME Тут все верно, работа с UI должна выполняться только в UI потоке
             self.countries.append(country)
             self.tableView.reloadData()
         }
     }
     
+    //MARK: ME Создание модели из dict можно перенести в саму модель или в ее Satelite (мы так делали со stmt из БД)
     func createCountry(with title: String, countryProperties: Dictionary<String, AnyObject>) -> CLCountryModel {
             return CLCountryModel(title: title,
                                   capital: countryProperties["Capital"] as! String,

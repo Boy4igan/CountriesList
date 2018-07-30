@@ -1,6 +1,8 @@
 import UIKit
 
 class CLCountryViewController: UIViewController {
+    //MARK: ME Вся полезная логика у тебя перекочевыала во вьюху
+    
     let country: CLCountryModel
     
     init(country: CLCountryModel) {

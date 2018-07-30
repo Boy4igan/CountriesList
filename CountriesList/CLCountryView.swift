@@ -13,7 +13,7 @@ class CLCountryView: UIScrollView {
     // MARK: Initialization
     
     init(countryModel: CLCountryModel) {
-        
+        //MARK: ME Вьюха ничего не должна знать о модели. Она должна просто создавать свои сабьвюхи, а конкретные значения в них должен записывать контроллер
         country     = CLPairLabels(key: "Title:", value: countryModel.title, indent: indent)
         capital     = CLPairLabels(key: "Capital:", value: countryModel.capital, indent: indent)
         area        = CLPairLabels(key: "Area:", value: String(countryModel.area), indent: indent)
@@ -50,6 +50,8 @@ class CLCountryView: UIScrollView {
     
     // MARK: Layout subviews
     
+    //MARK: ME поставь лог и посмотри, как часто вызыввается метод layoutSubviews внутри UIScrollView
+    //Откажись пока от UIScrollView, сначала решим задачу так, а потом будем думать как жить с UIScrollView
     override func layoutSubviews() {
         super.layoutSubviews()
         

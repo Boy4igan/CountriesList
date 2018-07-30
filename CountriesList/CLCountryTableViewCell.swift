@@ -22,14 +22,22 @@ class CLCountryTableViewCell: UITableViewCell {
         addSubview(countryLabel)
         addSubview(capitalLabel)
         addSubview(flagImageView)
+        
+        //MARK: ME Обрати внимание на такие свойства как:
+        [textLabel, detailTextLabel, imageView]
+//        MARK: ME убедись что ни 1 из стандартных стилей ячейки тебе не подходит
     }
     
     required init?(coder aDecoder: NSCoder) {
+        //MARK: ME Вот эту штуку я обычно пихаю к приватным методам
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: ME Куда делись комфортные марки разделающие привтные методы, методи жизненного цикла и пр.?
+    
     override func layoutSubviews() {
         super.layoutSubviews()
+        //MARK: ME Layout subviews потренеруемся писать с тобой вместе, напомнишь мне на занятии
         
         let (flagFrame, unusedFrame) = getflagFrame()
         let (lhFrame, rhFrame) = unusedFrame.divided(atDistance: unusedFrame.size.width / 2, from: CGRectEdge.minXEdge)
