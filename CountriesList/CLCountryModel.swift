@@ -1,6 +1,5 @@
 import UIKit
 
-//MARK: ME почему var и почему let?
 struct CLCountryModel {
     let title: String
     let capital: String
