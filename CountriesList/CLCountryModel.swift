@@ -2,10 +2,10 @@ import UIKit
 
 //MARK: ME почему var и почему let?
 struct CLCountryModel {
-    var title: String
-    var capital: String
-    var area: UInt
-    var population: UInt
-    var countryDescription: String
+    let title: String
+    let capital: String
+    let area: UInt
+    let population: UInt
+    let countryDescription: String
     let flag: UIImage
 }
