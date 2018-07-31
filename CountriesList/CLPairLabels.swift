@@ -77,6 +77,11 @@ struct CLPairLabels {
     
     // MARK: Public methods
     
+    func update(keyLabelText: String, valueLabelText: String) {
+        keyLabel.text   = keyLabelText
+        valueLabel.text = valueLabelText
+    }
+    
     func sizeThatFits(_ size: CGSize) -> CGSize {
         let keySize     = keyLabel.sizeThatFits(size)
         let valueSize   = valueLabel.sizeThatFits(size)
