@@ -11,8 +11,6 @@ class CLCountryView: UIView {
     
     // MARK: Initialization
     
-    //MARK: ME Вьюха ничеvarо не должна знать о модели. Она должна просто создавать свои сабьвюхи, а конкретные значения в них должен записывать контроллер
-    
     init() {
         super.init(frame: .zero)
         
@@ -44,8 +42,6 @@ class CLCountryView: UIView {
     
     // MARK: Layout subviews
     
-    //MARK: ME поставь лог и посмотри, как часто вызыввается метод layoutSubviews внутри UIScrollView
-    //Откажись пока от UIScrollView, сначала решим задачу так, а потом будем думать как жить с UIScrollView
     override func layoutSubviews() {
         super.layoutSubviews()
         
