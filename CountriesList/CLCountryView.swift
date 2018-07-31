@@ -1,16 +1,24 @@
 import UIKit
 
 class CLCountryView: UIScrollView {
-    let flagImgView = UIImageView()
-    var country: CLPairLabels
-    var capital: CLPairLabels
-    var area: CLPairLabels
-    var population: CLPairLabels
-    var countryDescription: CLPairLabels
-    
-    let indent: CGFloat = 10
+    let flagImgView         = UIImageView()
+    var country             = CLPairLabels()
+    var capital             = CLPairLabels()
+    var area                = CLPairLabels()
+    var population          = CLPairLabels()
+    var countryDescription  = CLPairLabels()
+    let indent: CGFloat     = 10
     
     // MARK: Initialization
+    
+    init() {
+        super.init(frame: .zero)
+        
+        backgroundColor         = .white
+        flagImgView.contentMode = .scaleAspectFit
+        
+        addSubviews()
+    }
     
     init(countryModel: CLCountryModel) {
         //MARK: ME Вьюха ничего не должна знать о модели. Она должна просто создавать свои сабьвюхи, а конкретные значения в них должен записывать контроллер
