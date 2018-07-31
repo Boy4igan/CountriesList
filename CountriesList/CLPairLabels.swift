@@ -3,7 +3,7 @@ import UIKit
 //MARK: Любая сущность, что содержит в себе экземпляры UIView (или его наследников), дожна сам являться UIView (или его наследником)
 //Исключение UIViewController и его наследники.
 
-class CLPairLabels {
+class CLPairLabels : UILabel {
     let keyLabel    = UILabel()
     let valueLabel  = UILabel()
     var indent: CGFloat
@@ -17,7 +17,7 @@ class CLPairLabels {
         }
     }
     
-    var frame: CGRect {
+    override var frame: CGRect {
         get {
             var size: CGSize
             
@@ -71,12 +71,18 @@ class CLPairLabels {
     }
     
     init(key: String, vaue: String, indent: CGFloat, position: Position) {
-        keyLabel.text   = key
-        valueLabel.text = vaue
         self.indent     = indent
         self.position   = position
         
+        super.init(frame: CGRect.zero)
+        
+        keyLabel.text   = key
+        valueLabel.text = vaue
         keyLabel.font   = UIFont.boldSystemFont(ofSize: keyLabel.font.pointSize)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: Public methods
@@ -86,7 +92,7 @@ class CLPairLabels {
         valueLabel.text = valueLabelText
     }
     
-    func sizeThatFits(_ size: CGSize) -> CGSize {
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
         let keySize     = keyLabel.sizeThatFits(size)
         let valueSize   = valueLabel.sizeThatFits(size)
         
