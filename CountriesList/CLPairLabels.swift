@@ -3,7 +3,7 @@ import UIKit
 //MARK: Любая сущность, что содержит в себе экземпляры UIView (или его наследников), дожна сам являться UIView (или его наследником)
 //Исключение UIViewController и его наследники.
 
-struct CLPairLabels {
+class CLPairLabels {
     let keyLabel    = UILabel()
     let valueLabel  = UILabel()
     var indent: CGFloat
@@ -62,11 +62,11 @@ struct CLPairLabels {
     
     //MARK: Initialization
     
-    init() {
+    convenience init() {
         self.init(key: "key not assigned", vaue: "value not assigned", indent: 0, position: .horizontal)
     }
     
-    init(key: String, value: String, indent: CGFloat) {
+    convenience init(key: String, value: String, indent: CGFloat) {
         self.init(key: key, vaue: value, indent: indent, position: .horizontal)
     }
     
