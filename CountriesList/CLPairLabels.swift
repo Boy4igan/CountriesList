@@ -5,8 +5,8 @@ import UIKit
 struct CLPairLabels {
     let keyLabel    = UILabel()
     let valueLabel  = UILabel()
-    let indent: CGFloat
-    let position: Position
+    var indent: CGFloat
+    var position: Position
     
     var frame: CGRect {
         get {
