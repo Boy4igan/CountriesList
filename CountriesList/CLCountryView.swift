@@ -11,29 +11,13 @@ class CLCountryView: UIScrollView {
     
     // MARK: Initialization
     
+    //MARK: ME Вьюха ничеvarо не должна знать о модели. Она должна просто создавать свои сабьвюхи, а конкретные значения в них должен записывать контроллер
+    
     init() {
         super.init(frame: .zero)
         
-        backgroundColor         = .white
-        flagImgView.contentMode = .scaleAspectFit
-        
-        addSubviews()
-    }
-    
-    init(countryModel: CLCountryModel) {
-        //MARK: ME Вьюха ничего не должна знать о модели. Она должна просто создавать свои сабьвюхи, а конкретные значения в них должен записывать контроллер
-        country     = CLPairLabels(key: "Title:", value: countryModel.title, indent: indent)
-        capital     = CLPairLabels(key: "Capital:", value: countryModel.capital, indent: indent)
-        area        = CLPairLabels(key: "Area:", value: String(countryModel.area), indent: indent)
-        population  = CLPairLabels(key: "Population:", value: String(countryModel.population), indent: indent)
-        countryDescription = CLPairLabels(key: "Description:", vaue: countryModel.countryDescription,
-                                          indent: indent, position: .vertical)
-        
-        super.init(frame: .zero)
-        
-        backgroundColor         = .white
-        flagImgView.image       = countryModel.flag
-        flagImgView.contentMode = .scaleAspectFit
+        backgroundColor             = .white
+        flagImgView.contentMode     = .scaleAspectFit
         
         addSubviews()
     }
