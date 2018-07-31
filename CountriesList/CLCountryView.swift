@@ -1,6 +1,6 @@
 import UIKit
 
-class CLCountryView: UIScrollView {
+class CLCountryView: UIView {
     let flagImgView         = UIImageView()
     var country             = CLPairLabels()
     var capital             = CLPairLabels()
@@ -16,8 +16,8 @@ class CLCountryView: UIScrollView {
     init() {
         super.init(frame: .zero)
         
-        backgroundColor             = .white
-        flagImgView.contentMode     = .scaleAspectFit
+        backgroundColor         = .white
+        flagImgView.contentMode = .scaleAspectFit
         
         addSubviews()
     }
@@ -55,8 +55,6 @@ class CLCountryView: UIScrollView {
         unusedFrame = assignLocateFor(&area, in: unusedFrame)
         unusedFrame = assignLocateFor(&population, in: unusedFrame)
         unusedFrame = assignLocateFor(&countryDescription, in: unusedFrame)
-        
-        updateContentSize(width: unusedFrame.size.width, height: unusedFrame.origin.y)
     }
     
     func assignLocateFlag(in viewsFrame: CGRect) -> CGRect {
@@ -77,12 +75,5 @@ class CLCountryView: UIScrollView {
         pairLabels.frame = pairFrame
         
         return unusedFrame.offsetBy(dx: 0, dy: indent)
-    }
-    
-    // MARK: Updating content size
-    
-    func updateContentSize(width: CGFloat, height: CGFloat) {
-        contentSize.width   = width
-        contentSize.height  = height
     }
 }
