@@ -51,6 +51,12 @@ struct CLPairLabels {
         }
     }
     
+    //MARK: Initialization
+    
+    init() {
+        self.init(key: "key not assigned", vaue: "value not assigned", indent: 0, position: .horizontal)
+    }
+    
     init(key: String, value: String, indent: CGFloat) {
         self.init(key: key, vaue: value, indent: indent, position: .horizontal)
     }
@@ -69,6 +75,13 @@ struct CLPairLabels {
         }
     }
     
+    // MARK: Public methods
+    
+    func update(keyLabelText: String, valueLabelText: String) {
+        keyLabel.text   = keyLabelText
+        valueLabel.text = valueLabelText
+    }
+    
     func sizeThatFits(_ size: CGSize) -> CGSize {
         let keySize     = keyLabel.sizeThatFits(size)
         let valueSize   = valueLabel.sizeThatFits(size)
@@ -81,6 +94,8 @@ struct CLPairLabels {
                       height: keySize.height + valueSize.height + indent)
     }
 }
+
+//MARK: Declaration of nested enum - Position
 
 extension CLPairLabels {
     enum Position {
