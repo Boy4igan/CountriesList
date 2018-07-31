@@ -16,8 +16,10 @@ class CLCountryView: UIView {
     init() {
         super.init(frame: .zero)
         
-        backgroundColor         = .white
-        flagImgView.contentMode = .scaleAspectFit
+        backgroundColor             = .white
+        
+        flagImgView.contentMode     = .scaleAspectFit
+        countryDescription.position = .vertical
         
         addSubviews()
     }
