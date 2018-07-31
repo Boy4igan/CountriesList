@@ -6,7 +6,15 @@ struct CLPairLabels {
     let keyLabel    = UILabel()
     let valueLabel  = UILabel()
     var indent: CGFloat
-    var position: Position
+    
+    var position: Position {
+        didSet {
+            if position == .vertical {
+                valueLabel.numberOfLines = 0
+                valueLabel.lineBreakMode = .byWordWrapping
+            }
+        }
+    }
     
     var frame: CGRect {
         get {
@@ -68,11 +76,6 @@ struct CLPairLabels {
         self.position   = position
         
         keyLabel.font   = UIFont.boldSystemFont(ofSize: keyLabel.font.pointSize)
-        
-        if position == .vertical {
-            valueLabel.numberOfLines = 0
-            valueLabel.lineBreakMode = .byWordWrapping
-        }
     }
     
     // MARK: Public methods
