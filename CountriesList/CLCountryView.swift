@@ -2,7 +2,6 @@ import UIKit
 
 class CLCountryView: UIView {
     let flagImgView         = UIImageView()
-    var country             = CLPairLabels()
     var capital             = CLPairLabels()
     var area                = CLPairLabels()
     var population          = CLPairLabels()
@@ -28,8 +27,6 @@ class CLCountryView: UIView {
     
     func addSubviews() {
         addSubview(flagImgView)
-        addSubview(country.keyLabel)
-        addSubview(country.valueLabel)
         addSubview(capital.keyLabel)
         addSubview(capital.valueLabel)
         addSubview(area.keyLabel)
@@ -48,7 +45,6 @@ class CLCountryView: UIView {
         let viewsFrame  = UIScreen.main.bounds.insetBy(dx: indent, dy: indent)
         var unusedFrame = assignLocateFlag(in: viewsFrame)
         
-        unusedFrame = assignLocateFor(&country, in: unusedFrame)
         unusedFrame = assignLocateFor(&capital, in: unusedFrame)
         unusedFrame = assignLocateFor(&area, in: unusedFrame)
         unusedFrame = assignLocateFor(&population, in: unusedFrame)
