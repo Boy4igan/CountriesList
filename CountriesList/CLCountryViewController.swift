@@ -23,7 +23,7 @@ class CLCountryViewController: UIViewController {
     
     override func viewDidLoad() {
         countryView.flagImgView.image = countryModel.flag
-        countryView.country.update(keyLabelText: "Title:", valueLabelText: countryModel.title)
+        
         countryView.capital.update(keyLabelText: "Capital:", valueLabelText: countryModel.capital)
         countryView.area.update(keyLabelText: "Area:", valueLabelText: String(countryModel.area))
         countryView.population.update(keyLabelText: "Population:",
