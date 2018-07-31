@@ -1,7 +1,8 @@
 import UIKit
 
 //MARK: Любая сущность, что содержит в себе экземпляры UIView (или его наследников), дожна сам являться UIView (или его наследником)
-//Исключение UIViewController и его наследники. 
+//Исключение UIViewController и его наследники.
+
 struct CLPairLabels {
     let keyLabel    = UILabel()
     let valueLabel  = UILabel()
