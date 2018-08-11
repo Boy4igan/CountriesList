@@ -32,4 +32,14 @@ class CLCountryViewController: UIViewController {
                                               valueLabelText: countryModel.countryDescription)
         countryView.updateFixedWidthOfPairLabels()
     }
+    
+    override func viewWillLayoutSubviews() {
+        viewUpdateTopIndent()
+    }
+    
+    func viewUpdateTopIndent() {
+        if let navBarFrame = self.navigationController?.navigationBar.frame {
+            countryView.topIndent = navBarFrame.origin.y + navBarFrame.size.height
+        }
+    }
 }
