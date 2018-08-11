@@ -93,7 +93,7 @@ class CLPairLabels: UILabel {
         
         if position == .horizontal {
             (keyFrame, remainder)   = rect.divided(atDistance: keyLabelSize.width, from: .minXEdge)
-            (_, valueFrame)         = remainder.divided(atDistance: indent, from: .minYEdge)
+            (_, valueFrame)         = remainder.divided(atDistance: indent, from: .minXEdge)
             
             return (keyFrame, valueFrame)
         }

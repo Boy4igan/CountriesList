@@ -7,22 +7,15 @@ class CLCountryView: UIView {
     var capital             = CLPairLabels()
     var area                = CLPairLabels()
     var population          = CLPairLabels()
-    var countryDescription: CLPairLabels = {
-        let label = CLPairLabels(position: .vertical, indent: 0)
-        
-        label.keyLabel.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
-        label.valueLabel.numberOfLines = 0
-        return label
-    }()
+    var countryDescription  = CLPairLabels(position: .vertical, indent: 0)
     
     // MARK: Initialization
     
     init() {
         super.init(frame: .zero)
         
-        backgroundColor             = .white
-        flagImgView.contentMode     = .scaleAspectFit
-        
+        backgroundColor = .white
+        setStylesForSubviews()
         addSubviews()
     }
     
@@ -36,6 +29,23 @@ class CLCountryView: UIView {
         addSubview(area)
         addSubview(population)
         addSubview(countryDescription)
+    }
+    
+    func setStylesForSubviews() {
+        flagImgView.contentMode = .scaleAspectFit
+        
+        setStylesForPairLabels(pairLabels: capital)
+        setStylesForPairLabels(pairLabels: area)
+        setStylesForPairLabels(pairLabels: population)
+        setStylesForPairLabels(pairLabels: countryDescription)
+        
+        countryDescription.valueLabel.numberOfLines = 0
+        countryDescription.indent                   = 0
+    }
+    
+    func setStylesForPairLabels(pairLabels: CLPairLabels) {
+        pairLabels.keyLabel.font    = UIFont.boldSystemFont(ofSize: pairLabels.font.pointSize)
+        pairLabels.indent           = indent
     }
     
     // MARK: Layout subviews
