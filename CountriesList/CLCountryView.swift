@@ -1,12 +1,19 @@
 import UIKit
 
 class CLCountryView: UIView {
+    let indent: CGFloat     = 10
+    
     let flagImgView         = UIImageView()
     var capital             = CLPairLabels()
     var area                = CLPairLabels()
     var population          = CLPairLabels()
-    var countryDescription  = CLPairLabels()
-    let indent: CGFloat     = 10
+    var countryDescription: CLPairLabels = {
+        let label = CLPairLabels(position: .vertical, indent: 0)
+        
+        label.keyLabel.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
+        label.valueLabel.numberOfLines = 0
+        return label
+    }()
     
     // MARK: Initialization
     
@@ -14,9 +21,7 @@ class CLCountryView: UIView {
         super.init(frame: .zero)
         
         backgroundColor             = .white
-        
         flagImgView.contentMode     = .scaleAspectFit
-        countryDescription.position = .vertical
         
         addSubviews()
     }
@@ -27,14 +32,10 @@ class CLCountryView: UIView {
     
     func addSubviews() {
         addSubview(flagImgView)
-        addSubview(capital.keyLabel)
-        addSubview(capital.valueLabel)
-        addSubview(area.keyLabel)
-        addSubview(area.valueLabel)
-        addSubview(population.keyLabel)
-        addSubview(population.valueLabel)
-        addSubview(countryDescription.keyLabel)
-        addSubview(countryDescription.valueLabel)
+        addSubview(capital)
+        addSubview(area)
+        addSubview(population)
+        addSubview(countryDescription)
     }
     
     // MARK: Layout subviews
