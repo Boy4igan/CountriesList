@@ -30,7 +30,7 @@ class CLCountryViewController: UIViewController {
                                       valueLabelText: String(countryModel.population))
         countryView.countryDescription.update(keyLabelText: "Description:",
                                               valueLabelText: countryModel.countryDescription)
-        countryView.updateFixedWidthOfPairLabels()
+        countryView.updateFixedWidthOfKeyInPairLabels()
     }
     
     override func viewWillLayoutSubviews() {

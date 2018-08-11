@@ -2,7 +2,7 @@ import UIKit
 
 class CLCountryView: UIView {
     var topIndent: CGFloat?
-    let indent: CGFloat     = 10
+    let indent: CGFloat     = 5
     
     let flagImgView         = UIImageView()
     var capital             = CLPairLabels()
@@ -69,36 +69,37 @@ class CLCountryView: UIView {
         let viewsFrame  = getSubviewsFrame()
         var unusedFrame = assignLocateFlag(in: viewsFrame)
         
-        unusedFrame = assignLocateFor(&capital, in: unusedFrame)
-        unusedFrame = assignLocateFor(&area, in: unusedFrame)
-        unusedFrame = assignLocateFor(&population, in: unusedFrame)
-        unusedFrame = assignLocateFor(&countryDescription, in: unusedFrame)
+        unusedFrame = assignLocateFor(capital, in: unusedFrame)
+        unusedFrame = assignLocateFor(area, in: unusedFrame)
+        unusedFrame = assignLocateFor(population, in: unusedFrame)
+        unusedFrame = assignLocateFor(countryDescription, in: unusedFrame)
     }
     
     func assignLocateFlag(in viewsFrame: CGRect) -> CGRect {
         let flagSize                    = flagImgView.sizeThatFits(viewsFrame.size)
-        let (flagFrame, unusedFrame)    = viewsFrame.divided(atDistance: flagSize.height,
+        var (flagFrame, unusedFrame)    = viewsFrame.divided(atDistance: flagSize.height,
                                                              from: CGRectEdge.minYEdge)
         
-        flagImgView.frame = flagFrame.insetBy(dx: (flagFrame.size.width - flagSize.width)/2, dy: 0)
+        flagImgView.frame   = flagFrame.insetBy(dx: (flagFrame.size.width - flagSize.width)/2, dy: 0)
+        (_, unusedFrame)    = unusedFrame.divided(atDistance: indent, from: .minYEdge)
         
-        return unusedFrame.offsetBy(dx: 0, dy: indent)
+        return unusedFrame
     }
     
-    func assignLocateFor( _ pairLabels: inout CLPairLabels, in subviewFrame: CGRect) -> CGRect {
-        let pairSize                    = pairLabels.sizeThatFits(subviewFrame.size)
-        let (pairFrame, unusedFrame)    = subviewFrame.divided(atDistance: pairSize.height,
+    func assignLocateFor( _ pairLabels: CLPairLabels, in subviewFrame: CGRect) -> CGRect {
+        let pairSize = calculatePairLabelSize(label: pairLabels, frameSize: subviewFrame.size)
+        var (pairFrame, unusedFrame)    = subviewFrame.divided(atDistance: pairSize.height,
                                                                from: CGRectEdge.minYEdge)
-        
+        (_, unusedFrame) = unusedFrame.divided(atDistance: indent, from: .minYEdge)
         pairLabels.frame = pairFrame
         
-        return unusedFrame.offsetBy(dx: 0, dy: indent)
+        return unusedFrame
     }
     
     // MARK: Calculating fixed width for PairLabels
     
-    func updateFixedWidthOfPairLabels() {
-        let widthConstraint = getMaxWidthOfKeyLabels()
+    func updateFixedWidthOfKeyInPairLabels() {
+        let widthConstraint = getMaxWidthOfKeyFromPairLabels()
         
         for subview in subviews {
             if let pairLabels = subview as? CLPairLabels {
@@ -107,7 +108,7 @@ class CLCountryView: UIView {
         }
     }
     
-    func getMaxWidthOfKeyLabels() -> CGFloat {
+    func getMaxWidthOfKeyFromPairLabels() -> CGFloat {
         var maxWidth: CGFloat = 0
         
         for subiew in subviews {
@@ -118,5 +119,16 @@ class CLCountryView: UIView {
             }
         }
         return maxWidth
+    }
+    
+    // MARK: Calculating pair label size
+    
+    func calculatePairLabelSize(label: CLPairLabels, frameSize: CGSize) -> CGSize {
+        if label.position == .vertical {
+            let rowsConstraint = Int(frameSize.height / label.valueLabel.font.lineHeight)
+            
+            label.valueLabel.numberOfLines = rowsConstraint
+        }
+        return label.sizeThatFits(frameSize)
     }
 }
