@@ -1,6 +1,7 @@
 import UIKit
 
 class CLCountryView: UIView {
+    var topIndent: CGFloat?
     let indent: CGFloat     = 10
     
     let flagImgView         = UIImageView()
@@ -50,19 +51,28 @@ class CLCountryView: UIView {
         pairLabels.indent           = indent
     }
     
+    // MARK: Subiews frame
+    
+    func getSubviewsFrame() -> CGRect {
+        var subviewsFrame = UIScreen.main.bounds
+        
+        (_, subviewsFrame)  = subviewsFrame.divided(atDistance: topIndent ?? 0, from: .minYEdge)
+        
+        return subviewsFrame.insetBy(dx: indent, dy: indent)
+    }
+    
     // MARK: Layout subviews
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let viewsFrame  = UIScreen.main.bounds.insetBy(dx: indent, dy: indent)
+        let viewsFrame  = getSubviewsFrame()
         var unusedFrame = assignLocateFlag(in: viewsFrame)
         
         unusedFrame = assignLocateFor(&capital, in: unusedFrame)
         unusedFrame = assignLocateFor(&area, in: unusedFrame)
         unusedFrame = assignLocateFor(&population, in: unusedFrame)
         unusedFrame = assignLocateFor(&countryDescription, in: unusedFrame)
-        
     }
     
     func assignLocateFlag(in viewsFrame: CGRect) -> CGRect {
