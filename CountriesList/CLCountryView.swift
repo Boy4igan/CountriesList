@@ -31,6 +31,8 @@ class CLCountryView: UIView {
         addSubview(countryDescription)
     }
     
+    // MARK: Assigning subviews styles
+    
     func setStylesForSubviews() {
         flagImgView.contentMode = .scaleAspectFit
         
@@ -60,6 +62,7 @@ class CLCountryView: UIView {
         unusedFrame = assignLocateFor(&area, in: unusedFrame)
         unusedFrame = assignLocateFor(&population, in: unusedFrame)
         unusedFrame = assignLocateFor(&countryDescription, in: unusedFrame)
+        
     }
     
     func assignLocateFlag(in viewsFrame: CGRect) -> CGRect {
@@ -80,5 +83,30 @@ class CLCountryView: UIView {
         pairLabels.frame = pairFrame
         
         return unusedFrame.offsetBy(dx: 0, dy: indent)
+    }
+    
+    // MARK: Calculating fixed width for PairLabels
+    
+    func updateFixedWidthOfPairLabels() {
+        let widthConstraint = getMaxWidthOfKeyLabels()
+        
+        for subview in subviews {
+            if let pairLabels = subview as? CLPairLabels {
+                pairLabels.keyLabelFixedWidth = widthConstraint
+            }
+        }
+    }
+    
+    func getMaxWidthOfKeyLabels() -> CGFloat {
+        var maxWidth: CGFloat = 0
+        
+        for subiew in subviews {
+            if let pairLabels = subiew as? CLPairLabels {
+                if pairLabels.position == .horizontal {
+                    maxWidth = max(maxWidth, pairLabels.keyLabel.intrinsicContentSize.width)
+                }
+            }
+        }
+        return maxWidth
     }
 }
