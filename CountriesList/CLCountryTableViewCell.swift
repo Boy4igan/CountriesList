@@ -1,31 +1,19 @@
 import UIKit
 
 class CLCountryTableViewCell: UITableViewCell {
+    let indent: CGFloat = 5
     
-    let countryLabel    = UILabel()
-    let capitalLabel    = UILabel()
-    let flagImageView   = UIImageView(frame: CGRect.zero)
-    let indentBetweenElements: CGFloat = 7
+    lazy var flagImageView  = self.imageView!
+    lazy var countryLabel   = self.textLabel!
+    lazy var capitalLabel   = self.detailTextLabel!
+    
+    // MARK: Initialization
     
     init(reuseIdentifier: String?) {
-        super.init(style: UITableViewCellStyle.default, reuseIdentifier: reuseIdentifier)
+        super.init(style: UITableViewCellStyle.value1, reuseIdentifier: reuseIdentifier)
         
-        flagImageView.contentMode           = .scaleAspectFit
-        flagImageView.clipsToBounds         = true
-        flagImageView.layer.cornerRadius    = 10
-        
-        countryLabel.font           = UIFont.boldSystemFont(ofSize: countryLabel.font.pointSize)
-        
-        capitalLabel.textAlignment  = .right
-        capitalLabel.textColor      = UIColor.darkGray
-        
-        addSubview(countryLabel)
-        addSubview(capitalLabel)
-        addSubview(flagImageView)
-        
-        //MARK: ME Обрати внимание на такие свойства как:
-        [textLabel, detailTextLabel, imageView]
-//        MARK: ME убедись что ни 1 из стандартных стилей ячейки тебе не подходит
+        imageView!.clipsToBounds        = true
+        imageView!.layer.cornerRadius   = 5
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,37 +21,17 @@ class CLCountryTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: ME Куда делись комфортные марки разделающие привтные методы, методи жизненного цикла и пр.?
+    //MARK: Layout subviews
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        //MARK: ME Layout subviews потренеруемся писать с тобой вместе, напомнишь мне на занятии
         
-        let (flagFrame, unusedFrame) = getflagFrame()
-        let (lhFrame, rhFrame) = unusedFrame.divided(atDistance: unusedFrame.size.width / 2, from: CGRectEdge.minXEdge)
-        
-        flagImageView.frame = flagFrame
-        countryLabel.frame  = lhFrame.insetBy(dx: indentBetweenElements, dy: 0)
-        capitalLabel.frame  = rhFrame
+        reduceFlagFrame()
     }
     
-    func getflagFrame() -> (flagFrame: CGRect, unusedFrame: CGRect) {
-        let subviewsFrame               = self.bounds
-        let flagFrameConstraint         = subviewsFrame.insetBy(dx: indentBetweenElements,
-                                                                dy: indentBetweenElements)
-        let flagSize                    = fit(imageView: flagImageView, to: flagFrameConstraint.size)
-        let (flagFrame, unusedFrame)    = flagFrameConstraint.divided(atDistance: flagSize.width,
-                                                                      from: CGRectEdge.minXEdge)
+    func reduceFlagFrame() {
+        let aspectRatio = flagImageView.bounds.width / flagImageView.bounds.height
         
-        return (flagFrame, unusedFrame)
-    }
-    
-    func fit(imageView: UIImageView, to cellSize: CGSize) -> CGSize {
-        let imgSize             = imageView.image!.size
-        let heightConstraint    = cellSize.height
-        let ratio               = imgSize.height / heightConstraint
-        let newWidth            = imgSize.width / ratio
-        
-        return CGSize(width: newWidth, height: heightConstraint)
+        flagImageView.frame = flagImageView.frame.insetBy(dx: indent * aspectRatio, dy: indent)
     }
 }
