@@ -6,6 +6,8 @@ class CLCountryViewController: UIViewController {
     let countryModel: CLCountryModel
     lazy var countryView = view as! CLCountryView
     
+    // MARK: Initialization
+    
     init(country: CLCountryModel) {
         self.countryModel = country
         
@@ -16,6 +18,8 @@ class CLCountryViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: Overriding methods
     
     override func loadView() {
         view = CLCountryView()
@@ -36,6 +40,8 @@ class CLCountryViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         viewUpdateTopIndent()
     }
+    
+    // MARK: Update top indent in view
     
     func viewUpdateTopIndent() {
         if let navBarFrame = self.navigationController?.navigationBar.frame {

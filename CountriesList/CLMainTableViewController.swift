@@ -8,6 +8,7 @@ class CLMainTableViewController: UITableViewController {
     
     init()  {
         super.init(nibName: nil, bundle: nil)
+        
         title = "Countries"
         modelSatellite.loadModels(selector: didLoadModel(_:))
     }
@@ -48,6 +49,8 @@ class CLMainTableViewController: UITableViewController {
         cell.countryLabel.text      = country.title
         cell.capitalLabel.text      = country.capital
     }
+    
+    // MARK: Did loaded model from ModelSatellite
     
     func didLoadModel(_ country: CLCountryModel) {
         countries.append(country)
