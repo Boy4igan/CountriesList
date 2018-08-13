@@ -2,7 +2,7 @@ import UIKit
 
 class CLMainTableViewController: UITableViewController {
     var countries       = [CLCountryModel]()
-    let modelSatellite  = CLModelSatelite()
+    let modelSatellite  = CLModelSatellite()
     
     // MARK: - Initialization
     

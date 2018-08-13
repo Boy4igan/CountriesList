@@ -1,6 +1,6 @@
 import Foundation
 
-class CLModelSatelite {
+class CLModelSatellite {
     private var  callback: (( _: CLCountryModel) -> ())!
     
     private var urlToFilePath: URL {
