@@ -1,32 +1,22 @@
 import UIKit
 
-class CLCountryView: UIScrollView {
-    let flagImgView = UIImageView()
-    var country: CLPairLabels
-    var capital: CLPairLabels
-    var area: CLPairLabels
-    var population: CLPairLabels
-    var countryDescription: CLPairLabels
+class CLCountryView: UIView {
+    var topIndent: CGFloat?
+    let indent: CGFloat     = 5
     
-    let indent: CGFloat = 10
+    let flagImgView         = UIImageView()
+    var capital             = CLPairLabels()
+    var area                = CLPairLabels()
+    var population          = CLPairLabels()
+    var countryDescription  = CLPairLabels(position: .vertical, indent: 0)
     
     // MARK: Initialization
     
-    init(countryModel: CLCountryModel) {
-        //MARK: ME Вьюха ничего не должна знать о модели. Она должна просто создавать свои сабьвюхи, а конкретные значения в них должен записывать контроллер
-        country     = CLPairLabels(key: "Title:", value: countryModel.title, indent: indent)
-        capital     = CLPairLabels(key: "Capital:", value: countryModel.capital, indent: indent)
-        area        = CLPairLabels(key: "Area:", value: String(countryModel.area), indent: indent)
-        population  = CLPairLabels(key: "Population:", value: String(countryModel.population), indent: indent)
-        countryDescription = CLPairLabels(key: "Description:", vaue: countryModel.countryDescription,
-                                          indent: indent, position: .vertical)
-        
+    init() {
         super.init(frame: .zero)
         
-        backgroundColor         = .white
-        flagImgView.image       = countryModel.flag
-        flagImgView.contentMode = .scaleAspectFit
-        
+        backgroundColor = .white
+        setStylesForSubviews()
         addSubviews()
     }
     
@@ -36,61 +26,109 @@ class CLCountryView: UIScrollView {
     
     func addSubviews() {
         addSubview(flagImgView)
-        addSubview(country.keyLabel)
-        addSubview(country.valueLabel)
-        addSubview(capital.keyLabel)
-        addSubview(capital.valueLabel)
-        addSubview(area.keyLabel)
-        addSubview(area.valueLabel)
-        addSubview(population.keyLabel)
-        addSubview(population.valueLabel)
-        addSubview(countryDescription.keyLabel)
-        addSubview(countryDescription.valueLabel)
+        addSubview(capital)
+        addSubview(area)
+        addSubview(population)
+        addSubview(countryDescription)
+    }
+    
+    // MARK: Assigning subviews styles
+    
+    func setStylesForSubviews() {
+        flagImgView.contentMode = .scaleAspectFit
+        
+        setStylesForPairLabels(pairLabels: capital)
+        setStylesForPairLabels(pairLabels: area)
+        setStylesForPairLabels(pairLabels: population)
+        setStylesForPairLabels(pairLabels: countryDescription)
+        
+        countryDescription.valueLabel.numberOfLines = 0
+        countryDescription.indent                   = 0
+    }
+    
+    func setStylesForPairLabels(pairLabels: CLPairLabels) {
+        pairLabels.keyLabel.font    = UIFont.boldSystemFont(ofSize: pairLabels.font.pointSize)
+        pairLabels.indent           = indent
+    }
+    
+    // MARK: Subiews frame
+    
+    func getSubviewsFrame() -> CGRect {
+        var subviewsFrame = UIScreen.main.bounds
+        
+        (_, subviewsFrame)  = subviewsFrame.divided(atDistance: topIndent ?? 0, from: .minYEdge)
+        
+        return subviewsFrame.insetBy(dx: indent, dy: indent)
     }
     
     // MARK: Layout subviews
     
-    //MARK: ME поставь лог и посмотри, как часто вызыввается метод layoutSubviews внутри UIScrollView
-    //Откажись пока от UIScrollView, сначала решим задачу так, а потом будем думать как жить с UIScrollView
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let viewsFrame  = UIScreen.main.bounds.insetBy(dx: indent, dy: indent)
+        let viewsFrame  = getSubviewsFrame()
         var unusedFrame = assignLocateFlag(in: viewsFrame)
         
-        unusedFrame = assignLocateFor(&country, in: unusedFrame)
-        unusedFrame = assignLocateFor(&capital, in: unusedFrame)
-        unusedFrame = assignLocateFor(&area, in: unusedFrame)
-        unusedFrame = assignLocateFor(&population, in: unusedFrame)
-        unusedFrame = assignLocateFor(&countryDescription, in: unusedFrame)
-        
-        updateContentSize(width: unusedFrame.size.width, height: unusedFrame.origin.y)
+        unusedFrame = assignLocateFor(capital, in: unusedFrame)
+        unusedFrame = assignLocateFor(area, in: unusedFrame)
+        unusedFrame = assignLocateFor(population, in: unusedFrame)
+        unusedFrame = assignLocateFor(countryDescription, in: unusedFrame)
     }
     
     func assignLocateFlag(in viewsFrame: CGRect) -> CGRect {
         let flagSize                    = flagImgView.sizeThatFits(viewsFrame.size)
-        let (flagFrame, unusedFrame)    = viewsFrame.divided(atDistance: flagSize.height,
+        var (flagFrame, unusedFrame)    = viewsFrame.divided(atDistance: flagSize.height,
                                                              from: CGRectEdge.minYEdge)
         
-        flagImgView.frame = flagFrame.insetBy(dx: (flagFrame.size.width - flagSize.width)/2, dy: 0)
+        flagImgView.frame   = flagFrame.insetBy(dx: (flagFrame.size.width - flagSize.width)/2, dy: 0)
+        (_, unusedFrame)    = unusedFrame.divided(atDistance: indent, from: .minYEdge)
         
-        return unusedFrame.offsetBy(dx: 0, dy: indent)
+        return unusedFrame
     }
     
-    func assignLocateFor( _ pairLabels: inout CLPairLabels, in subviewFrame: CGRect) -> CGRect {
-        let pairSize                    = pairLabels.sizeThatFits(subviewFrame.size)
-        let (pairFrame, unusedFrame)    = subviewFrame.divided(atDistance: pairSize.height,
+    func assignLocateFor( _ pairLabels: CLPairLabels, in subviewFrame: CGRect) -> CGRect {
+        let pairSize = calculatePairLabelSize(label: pairLabels, frameSize: subviewFrame.size)
+        var (pairFrame, unusedFrame)    = subviewFrame.divided(atDistance: pairSize.height,
                                                                from: CGRectEdge.minYEdge)
-        
+        (_, unusedFrame) = unusedFrame.divided(atDistance: indent, from: .minYEdge)
         pairLabels.frame = pairFrame
         
-        return unusedFrame.offsetBy(dx: 0, dy: indent)
+        return unusedFrame
     }
     
-    // MARK: Updating content size
+    // MARK: Calculating fixed width for PairLabels
     
-    func updateContentSize(width: CGFloat, height: CGFloat) {
-        contentSize.width   = width
-        contentSize.height  = height
+    func updateFixedWidthOfKeyInPairLabels() {
+        let widthConstraint = getMaxWidthOfKeyFromPairLabels()
+        
+        for subview in subviews {
+            if let pairLabels = subview as? CLPairLabels {
+                pairLabels.keyLabelFixedWidth = widthConstraint
+            }
+        }
+    }
+    
+    func getMaxWidthOfKeyFromPairLabels() -> CGFloat {
+        var maxWidth: CGFloat = 0
+        
+        for subiew in subviews {
+            if let pairLabels = subiew as? CLPairLabels {
+                if pairLabels.position == .horizontal {
+                    maxWidth = max(maxWidth, pairLabels.keyLabel.intrinsicContentSize.width)
+                }
+            }
+        }
+        return maxWidth
+    }
+    
+    // MARK: Calculating pair label size
+    
+    func calculatePairLabelSize(label: CLPairLabels, frameSize: CGSize) -> CGSize {
+        if label.position == .vertical {
+            let rowsConstraint = Int(frameSize.height / label.valueLabel.font.lineHeight)
+            
+            label.valueLabel.numberOfLines = rowsConstraint
+        }
+        return label.sizeThatFits(frameSize)
     }
 }

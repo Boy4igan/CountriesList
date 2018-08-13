@@ -3,10 +3,11 @@ import UIKit
 class CLCountryViewController: UIViewController {
     //MARK: ME Вся полезная логика у тебя перекочевыала во вьюху
     
-    let country: CLCountryModel
+    let countryModel: CLCountryModel
+    lazy var countryView = view as! CLCountryView
     
     init(country: CLCountryModel) {
-        self.country = country
+        self.countryModel = country
         
         super.init(nibName: nil, bundle: nil)
         title = country.title
@@ -17,6 +18,28 @@ class CLCountryViewController: UIViewController {
     }
     
     override func loadView() {
-        view = CLCountryView(countryModel: country)
+        view = CLCountryView()
+    }
+    
+    override func viewDidLoad() {
+        countryView.flagImgView.image = countryModel.flag
+        
+        countryView.capital.update(keyLabelText: "Capital:", valueLabelText: countryModel.capital)
+        countryView.area.update(keyLabelText: "Area:", valueLabelText: String(countryModel.area))
+        countryView.population.update(keyLabelText: "Population:",
+                                      valueLabelText: String(countryModel.population))
+        countryView.countryDescription.update(keyLabelText: "Description:",
+                                              valueLabelText: countryModel.countryDescription)
+        countryView.updateFixedWidthOfKeyInPairLabels()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        viewUpdateTopIndent()
+    }
+    
+    func viewUpdateTopIndent() {
+        if let navBarFrame = self.navigationController?.navigationBar.frame {
+            countryView.topIndent = navBarFrame.origin.y + navBarFrame.size.height
+        }
     }
 }

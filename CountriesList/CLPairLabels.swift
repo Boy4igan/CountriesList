@@ -1,90 +1,122 @@
 import UIKit
 
-//MARK: Любая сущность, что содержит в себе экземпляры UIView (или его наследников), дожна сам являться UIView (или его наследником)
-//Исключение UIViewController и его наследники. 
-struct CLPairLabels {
+class CLPairLabels: UILabel {
     let keyLabel    = UILabel()
     let valueLabel  = UILabel()
-    let indent: CGFloat
-    let position: Position
     
-    var frame: CGRect {
+    let position: Position!
+    var indent: CGFloat!
+    var keyLabelFixedWidth: CGFloat?
+    
+    // MARK: Overriding properties
+    
+    override var frame: CGRect {
         get {
-            var size: CGSize
-            
-            if (self.position == .horizontal) {
-                let totalWidth  = keyLabel.frame.size.width + indent + valueLabel.frame.size.width
-                let totalHeight = max(keyLabel.frame.size.height, valueLabel.frame.size.height)
-                
-                size = CGSize(width: totalWidth, height: totalHeight)
-            } else {
-                let totalWidth  = max(keyLabel.frame.size.width, valueLabel.frame.size.width)
-                let totalHeight = keyLabel.frame.size.height + indent + valueLabel.frame.size.height
-                
-                size = CGSize(width: totalWidth, height: totalHeight)
-            }
-            
-            return CGRect(origin: keyLabel.frame.origin, size: size)
+            return super.frame
         }
         
         set {
-            var keyLabelFrame, valueLabelFrame, remainder : CGRect
-            let keySize     = keyLabel.sizeThatFits(newValue.size)
-            let valueSize   = valueLabel.sizeThatFits(newValue.size)
+            let (keyFrame, valueFrame) = dividedRect(rect: newValue)
             
-            if position == .horizontal {
-                (keyLabelFrame, remainder) = newValue.divided(atDistance: keySize.width,
-                                                              from: CGRectEdge.minXEdge)
-                (valueLabelFrame, _)  = remainder.divided(atDistance: valueSize.width,
-                                                          from: CGRectEdge.minXEdge)
-                valueLabelFrame = valueLabelFrame.offsetBy(dx: indent, dy: 0)
-            } else {
-                (keyLabelFrame, remainder) = newValue.divided(atDistance: keySize.height, from: CGRectEdge.minYEdge)
-                (valueLabelFrame, _) = remainder.divided(atDistance: valueSize.height,
-                                                         from: CGRectEdge.minYEdge)
-                
-                valueLabelFrame = valueLabelFrame.offsetBy(dx: 0, dy: indent)
-            }
-            
-            keyLabel.frame      = keyLabelFrame
-            valueLabel.frame    = valueLabelFrame
+            valueLabel.frame    = valueFrame
+            keyLabel.frame      = keyFrame
+            super.frame         = newValue
         }
     }
     
-    init(key: String, value: String, indent: CGFloat) {
-        self.init(key: key, vaue: value, indent: indent, position: .horizontal)
-    }
+    // MARK: Initialization
     
-    init(key: String, vaue: String, indent: CGFloat, position: Position) {
-        keyLabel.text   = key
-        valueLabel.text = vaue
-        self.indent     = indent
+    init(position: Position, indent: CGFloat) {
         self.position   = position
+        self.indent     = indent
         
-        keyLabel.font   = UIFont.boldSystemFont(ofSize: keyLabel.font.pointSize)
-        
-        if position == .vertical {
-            valueLabel.numberOfLines = 0
-            valueLabel.lineBreakMode = .byWordWrapping
-        }
+        super.init(frame: .zero)
     }
     
-    func sizeThatFits(_ size: CGSize) -> CGSize {
-        let keySize     = keyLabel.sizeThatFits(size)
-        let valueSize   = valueLabel.sizeThatFits(size)
+    convenience init() {
+        self.init(position: .horizontal, indent: 0)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK: Overriding methods
+    
+    override func drawText(in rect: CGRect) {
+        let (keyFrame, valueFrame) = dividedRect(rect: rect)
         
-        if (self.position == .horizontal) {
-            return CGSize(width: keySize.width + valueSize.width + indent,
-                          height: max(keySize.height, valueSize.height))
+        keyLabel.drawText(in: keyFrame)
+        valueLabel.drawText(in: valueFrame)
+    }
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let rectangels = rectangelsSize(size)
+        
+        if position == .horizontal {
+            return CGSize(width: rectangels.keyLabelSize.width + rectangels.valueLabelSize.width + indent,
+                          height: rectangels.keyLabelSize.height)
         }
-        return CGSize(width: max(keySize.width, valueSize.width),
-                      height: keySize.height + valueSize.height + indent)
+        return CGSize(width: max(rectangels.keyLabelSize.width, rectangels.valueLabelSize.width),
+                      height: rectangels.keyLabelSize.height + indent + rectangels.valueLabelSize.height)
+    }
+    
+    // MARK: Calculating labels size
+    
+    func rectangelsSize(_ size: CGSize) -> (keyLabelSize: CGSize, valueLabelSize: CGSize) {
+        if position == .horizontal {
+            let (leftRectangle, rightRectangle) = splitHorizontally(size)
+            let keySize                         = keyLabel.sizeThatFits(leftRectangle)
+            let valueSize                       = valueLabel.sizeThatFits(rightRectangle)
+            let totalHeight                     = max(keySize.height, valueSize.height)
+            
+            return (CGSize(width: leftRectangle.width, height: totalHeight),
+                    CGSize(width: valueSize.width, height: totalHeight))
+        }
+        return (keyLabel.sizeThatFits(size), valueLabel.sizeThatFits(size))
+    }
+    
+    func splitHorizontally(_ sourceSize: CGSize) -> (leftRectangle: CGSize, rightRectangle: CGSize) {
+        let labelsSize          = CGSize(width: sourceSize.width - indent, height: sourceSize.height)
+        let leftRictangleWidth  = keyLabelFixedWidth ?? keyLabel.sizeThatFits(labelsSize).width
+        let rightRectangleWidth = labelsSize.width - leftRictangleWidth
+        
+        return (CGSize(width: leftRictangleWidth, height: sourceSize.height),
+                CGSize(width: rightRectangleWidth, height: sourceSize.height))
+    }
+    
+    // MARK: Frame division
+    
+    func dividedRect(rect: CGRect) -> (keyLabelFrame: CGRect, valueLabelFrame: CGRect) {
+        var keyFrame, valueFrame, remainder: CGRect
+        let (keyLabelSize, _)  = rectangelsSize(rect.size)
+        
+        if position == .horizontal {
+            (keyFrame, remainder)   = rect.divided(atDistance: keyLabelSize.width, from: .minXEdge)
+            (_, valueFrame)         = remainder.divided(atDistance: indent, from: .minXEdge)
+            
+            return (keyFrame, valueFrame)
+        }
+        
+        (keyFrame, remainder)   = rect.divided(atDistance: keyLabelSize.height, from: .minYEdge)
+        (_, valueFrame)         = remainder.divided(atDistance: indent, from: .minYEdge)
+        
+        return (keyFrame, valueFrame)
+    }
+    
+    // MARK: Update label content
+    
+    func update(keyLabelText: String, valueLabelText: String) {
+        keyLabel.text   = keyLabelText
+        valueLabel.text = valueLabelText
     }
 }
 
+// MARK: Position of labels
+
 extension CLPairLabels {
     enum Position {
-        case vertical
         case horizontal
+        case vertical
     }
 }

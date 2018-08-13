@@ -1,11 +1,20 @@
 import UIKit
 
-//MARK: ME почему var и почему let?
 struct CLCountryModel {
-    var title: String
-    var capital: String
-    var area: UInt
-    var population: UInt
-    var countryDescription: String
+    let title: String
+    let capital: String
+    let area: UInt
+    let population: UInt
+    let countryDescription: String
     let flag: UIImage
+    
+    init(countryTitle: String, countryAttributes: [String : AnyObject]) {
+        self.title              = countryTitle
+        self.capital            = countryAttributes["Capital"]      as! String
+        self.area               = countryAttributes["Total area"]   as! UInt
+        self.population         = countryAttributes["Population"]   as! UInt
+        self.countryDescription = countryAttributes["Description"]  as! String
+        self.flag               = UIImage(named: title)!
+    }
+    
 }

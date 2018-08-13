@@ -17,6 +17,7 @@
 		502BEBB4210F38E800D6B131 /* CLCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BEBAE210F38E700D6B131 /* CLCountryTableViewCell.swift */; };
 		502BEBB5210F38E800D6B131 /* CLCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BEBAF210F38E700D6B131 /* CLCountryView.swift */; };
 		502BEBB6210F38E800D6B131 /* CLMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BEBB0210F38E700D6B131 /* CLMainTableViewController.swift */; };
+		50787E5D2121D90B00A64D84 /* CLModelSatellite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50787E5C2121D90B00A64D84 /* CLModelSatellite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		502BEBAE210F38E700D6B131 /* CLCountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLCountryTableViewCell.swift; sourceTree = "<group>"; };
 		502BEBAF210F38E700D6B131 /* CLCountryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLCountryView.swift; sourceTree = "<group>"; };
 		502BEBB0210F38E700D6B131 /* CLMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLMainTableViewController.swift; sourceTree = "<group>"; };
+		50787E5C2121D90B00A64D84 /* CLModelSatellite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLModelSatellite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				502BEBAD210F38E700D6B131 /* CLCountryViewController.swift */,
 				502BEBAB210F38E700D6B131 /* CLPairLabels.swift */,
 				502BEBAC210F38E700D6B131 /* CLCountryModel.swift */,
+				50787E5C2121D90B00A64D84 /* CLModelSatellite.swift */,
 				502BEBA3210F382500D6B131 /* Info.plist */,
 				502BEBA0210F382500D6B131 /* LaunchScreen.storyboard */,
 			);
@@ -153,6 +156,7 @@
 				502BEB98210F382300D6B131 /* AppDelegate.swift in Sources */,
 				502BEBB1210F38E800D6B131 /* CLPairLabels.swift in Sources */,
 				502BEBB5210F38E800D6B131 /* CLCountryView.swift in Sources */,
+				50787E5D2121D90B00A64D84 /* CLModelSatellite.swift in Sources */,
 				502BEBB3210F38E800D6B131 /* CLCountryViewController.swift in Sources */,
 				502BEBB2210F38E800D6B131 /* CLCountryModel.swift in Sources */,
 				502BEBB4210F38E800D6B131 /* CLCountryTableViewCell.swift in Sources */,
