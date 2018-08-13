@@ -1,14 +1,15 @@
 import UIKit
 
 class CLMainTableViewController: UITableViewController {
-    var countries = [CLCountryModel]()
+    var countries       = [CLCountryModel]()
+    let modelSatellite  = CLModelSatelite()
     
     // MARK: - Initialization
     
     init()  {
         super.init(nibName: nil, bundle: nil)
         title = "Countries"
-        self.loadModelAsync()
+        modelSatellite.loadModels(selector: didLoadModel(_:))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,80 +48,9 @@ class CLMainTableViewController: UITableViewController {
         cell.countryLabel.text      = country.title
         cell.capitalLabel.text      = country.capital
     }
-}
-
-//MARK: Model builder
-//MARK: ME Заяем Extension?
-extension CLMainTableViewController {
     
-    var urlToFilePath: URL {
-        let urlToJson = Bundle.main.url(forResource: "countries", withExtension: "json")
-        
-        assert(urlToJson != nil, "Can't find file with named: counties.json")
-        
-        return urlToJson!
+    func didLoadModel(_ country: CLCountryModel) {
+        countries.append(country)
+        self.tableView.reloadData()
     }
-    
-    func loadModelAsync() {
-        DispatchQueue.global().async {
-            [unowned self] in
-            
-            let jsonDoc = self.jsonObject(with: self.readFile())
-            
-            self.addCountriesFrom(jsonDocument: jsonDoc)
-        }
-    }
-    
-    func readFile() -> Data {
-        var data: Data!
-        
-        do {
-            data = try Data(contentsOf: urlToFilePath)
-        }
-        catch {
-            fatalError(error.localizedDescription)
-        }
-        return data
-    }
-    
-    func jsonObject(with data: Data) -> Dictionary<String, Dictionary<String, AnyObject> > {
-        var jsonDoc: Any!
-        
-        do {
-            jsonDoc = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-        }
-        catch {
-            fatalError(error.localizedDescription)
-        }
-        
-        return jsonDoc as! Dictionary<String, Dictionary<String, AnyObject> >
-    }
-    
-    func addCountriesFrom(jsonDocument: Dictionary<String, Dictionary<String, AnyObject> >) {
-        for (title, countriesProperty) in jsonDocument {
-            let country = createCountry(with: title, countryProperties: countriesProperty)
-            
-            self.didObtainCountry(country)
-        }
-    }
-    
-    func didObtainCountry(_ country: CLCountryModel) {
-        DispatchQueue.main.async {
-            [unowned self] in
-//MARK: ME Тут все верно, работа с UI должна выполняться только в UI потоке
-            self.countries.append(country)
-            self.tableView.reloadData()
-        }
-    }
-    
-    //MARK: ME Создание модели из dict можно перенести в саму модель или в ее Satelite (мы так делали со stmt из БД)
-    func createCountry(with title: String, countryProperties: Dictionary<String, AnyObject>) -> CLCountryModel {
-            return CLCountryModel(title: title,
-                                  capital: countryProperties["Capital"] as! String,
-                                  area: countryProperties["Total area"] as! UInt,
-                                  population: countryProperties["Population"] as! UInt,
-                                  countryDescription: countryProperties["Description"] as! String,
-                                  flag: UIImage(named: title)!)
-        }
-    
 }
