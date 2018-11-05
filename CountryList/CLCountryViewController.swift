@@ -11,7 +11,6 @@ class CLCountryViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         title                    = countryModel.title
-        additionalSafeAreaInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
     
     // MARK: Override methods
@@ -21,27 +20,11 @@ class CLCountryViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        addSwipeGesture()
-        
         contentView.updateFlag(UIImage(named: countryModel.flag))
         contentView.updateValues(capital: countryModel.capital,
                                  area: countryModel.area,
                                  population: countryModel.population,
                                  description: countryModel.description)
-    }
-    
-    //MARK: private methods
-    
-    func addSwipeGesture() {
-        let swipe = UISwipeGestureRecognizer.init(target: self, action: #selector(handleSwipe(_:)))
-        
-        scrollView.addGestureRecognizer(swipe)
-    }
-    
-    //MARK: Handle gesture
-    
-    @objc func handleSwipe(_ swipe: UISwipeGestureRecognizer) {
-        navigationController?.popViewController(animated: true)
     }
     
     //MARK: Private methods

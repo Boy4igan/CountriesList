@@ -1,35 +1,35 @@
 import UIKit
 
-class CLScrollView: UIScrollView {
+class CLScrollView: UIView {
     let contentView = CLContentView()
-    
-    var subviewsFrame : CGRect {
-        return frame.inset(by: safeAreaInsets)
-    }
+    let scrollView = UIScrollView()
+    let contentViewInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     
     init() {
         super.init(frame: .zero)
-        
-        addSubview(contentView)
-        backgroundColor                = .white
-        contentInsetAdjustmentBehavior = .never
+
+        backgroundColor = .white
+
+        scrollView.addSubview(contentView)
+        addSubview(scrollView)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        let frame          = subviewsFrame
-        let frameSize      = contentView.sizeThatFits(frame.size)
-        let newContentSize = CGSize(width: frameSize.width + safeAreaInsets.left + safeAreaInsets.right,
-                                    height: frameSize.height + safeAreaInsets.top + safeAreaInsets.bottom)
-        
-        contentView.frame = CGRect(origin: frame.origin, size: frameSize)
-        contentSize       = newContentSize
+    override func safeAreaInsetsDidChange() {
+        print("...")
     }
     
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        scrollView.frame    = bounds
+        
+        let frame           = scrollView.bounds.inset(by: safeAreaInsets).inset(by: contentViewInset)
+        let contentSize     = contentView.sizeThatFits(frame.size)
+
+        contentView.frame       = CGRect(origin: frame.origin, size: contentSize)
+        scrollView.contentSize  = contentSize
+    }
 }

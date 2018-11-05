@@ -17,9 +17,9 @@ class CLContentView: UIView {
         addSubview(countryPropertiesView)
         addSubview(countryDescriptionView)
 
-        flagImageView.layer.cornerRadius = 5
+        flagImageView.layer.cornerRadius = 8
         flagImageView.clipsToBounds      = true
-        flagImageView.layer.borderWidth  = 1
+        flagImageView.layer.borderWidth  = 1.0
         flagImageView.layer.borderColor  = UIColor.black.cgColor
     }
     

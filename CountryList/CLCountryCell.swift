@@ -1,9 +1,6 @@
 import UIKit
 
 class CLCountryCell: UITableViewCell {
-
-    let imageViewIndent = UIEdgeInsets.init(top: 3, left: 3, bottom: 3, right: 3)
-
     //MARK: Override methods
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -17,8 +14,15 @@ class CLCountryCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        imageView!.bounds = imageView!.bounds.inset(by: imageViewIndent)
+        if let cImageView = imageView {
+            let imageSize = cImageView.sizeThatFits(self.bounds.size)
+            var imageFrame = contentView.bounds.inset(by: self.safeAreaInsets)
+            
+            imageFrame = bounds.insetBy(dx: 0, dy: (imageFrame.size.height - imageSize.height)/2)
+            imageFrame.size.width = imageSize.width
+            
+            cImageView.frame = imageFrame
+        }
     }
     
     //MARK: Private methods

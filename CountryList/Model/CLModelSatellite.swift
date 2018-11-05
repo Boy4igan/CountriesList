@@ -29,8 +29,8 @@ class CLModelSatellite {
     private func loadModel() {
         let jsonDoc = jsonObject(from: loadData())
         
-        for (title, countryAttributes) in jsonDoc {
-            let country = createCountryWithTitle(title, and: countryAttributes)
+        for countryDict in jsonDoc {
+            let country = createCountry(dict:countryDict)
             
             self.delegate?.didObtainModel(country)
         }
@@ -49,12 +49,12 @@ class CLModelSatellite {
         return resultData
     }
     
-    private func jsonObject(from data: Data) -> Dictionary<String, Dictionary<String, AnyObject> > {
-        let jsonDoc: Dictionary<String, Dictionary<String, AnyObject> >
+    private func jsonObject(from data: Data) -> [Dictionary<String, AnyObject>] {
+        let jsonDoc: [Dictionary<String, AnyObject>]
         
         do {
             jsonDoc = try JSONSerialization.jsonObject(with: data,
-                                                       options: .allowFragments) as! Dictionary<String, Dictionary<String, AnyObject> >
+                                                       options: .allowFragments) as! [Dictionary<String, AnyObject>]
         }
         catch {
             fatalError(error.localizedDescription)
@@ -63,13 +63,14 @@ class CLModelSatellite {
         return jsonDoc
     }
     
-    private func createCountryWithTitle(_ title: String,
-                                        and attributes: Dictionary<String, AnyObject>) -> CLCountryModel {
+    private func createCountry(dict : Dictionary<String, AnyObject>) -> CLCountryModel {
+        let title = dict["title"] as! String
+        
         return CLCountryModel(title: title,
-                              capital: attributes["Capital"] as! String,
-                              population: attributes["Population"] as! UInt,
-                              area: attributes["Total area"] as! UInt,
-                              description: attributes["Description"] as! String,
+                              capital: dict["Capital"] as! String,
+                              population: dict["Population"] as! UInt,
+                              area: dict["Total area"] as! UInt,
+                              description: dict["Description"] as! String,
                               flag: title)
     }
 }

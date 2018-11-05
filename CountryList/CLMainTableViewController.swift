@@ -1,21 +1,23 @@
 import UIKit
 
 class CLMainTableViewController: UITableViewController, CLModelSatelliteDellegate {
+    static let cellIdentifier = "cell"
+    
     let modelSatellite = CLModelSatellite()
     var countries      = [CLCountryModel]()
-    let cellIdentifier = "cell"
     
-    // Initialization
+    //MARK: - Initialization
     
     init() {
         super.init(nibName: nil, bundle: nil)
 
-        title                  = "Countries"
+        title = "Countries"
+        
         modelSatellite.delegate = self
         modelSatellite.startBackgroundLoad()
     }
     
-    //MARK: Model Satelite delegate
+    //MARK: - Model Satelite delegate
     
     func didObtainModel(_ model: CLCountryModel) {
         DispatchQueue.main.async { [unowned self] in
@@ -24,7 +26,7 @@ class CLMainTableViewController: UITableViewController, CLModelSatelliteDellegat
         }
     }
     
-    // MARK: - Table view data source
+    //MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
@@ -39,18 +41,23 @@ class CLMainTableViewController: UITableViewController, CLModelSatelliteDellegat
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(CLCountryViewController(countries[indexPath.row]),
-                                                 animated: true)
+        let detailsVC = CLCountryViewController(countries[indexPath.row])
+        
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
     
-    //MARK: Private methods
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170
+    }
+    
+    //MARK: - Private methods
     
     private func dequeueReusableCountryCell() -> UITableViewCell? {
-        return tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+        return tableView.dequeueReusableCell(withIdentifier: CLMainTableViewController.cellIdentifier)
     }
     
     private func createCountryCell() -> CLCountryCell {
-        return CLCountryCell(style: .value1, reuseIdentifier: cellIdentifier)
+        return CLCountryCell(style: .value1, reuseIdentifier: CLMainTableViewController.cellIdentifier)
     }
     
     private func updateCell(_ cell: UITableViewCell, from countryModel: CLCountryModel) {
