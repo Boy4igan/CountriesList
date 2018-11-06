@@ -10,7 +10,7 @@ class CLCountryViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        title                    = countryModel.title
+        title = countryModel.title
     }
     
     // MARK: Override methods
